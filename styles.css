@@ -33,6 +33,14 @@
   padding: 0 50px;
 }
 
+.navbar__container-bottom-string {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #d68d97;
+}
+
 #navbar__logo {
   display: block;
   margin-left: auto;
@@ -118,7 +126,7 @@
 }
 
 .navbar__links:hover {
-  color: #9518fc;
+  color: #9C0075;
   transition: all 0.3s ease;
 }
 
@@ -167,7 +175,7 @@
   #navbar__logo {
     display: block;
     margin: 20px;
-    height: auto;
+    height: 110px;
     margin-left: auto;
     margin-right: auto;
     
@@ -317,7 +325,7 @@
   }
 
   .hero__description {
-    font-size: 40px;
+    font-size: 37px;
   }
 }
 
@@ -394,6 +402,7 @@
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: 700;
+  color: #000000;
 }
 
 .main__btn {
@@ -404,7 +413,8 @@
   padding: 20px 60px;
   border: none;
   border-radius: 4px;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   position: relative;
   transition: all 0.15s;
@@ -446,7 +456,7 @@
   margin: 10px;
   height: 500px;
   width: 500px;
-  border-radius: 4px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -462,12 +472,22 @@
   font-size: 14rem;
 }
 
-#card-2 {
-  background: #ff512f;
-  background: -webkit-linear-gradient(to right, #dd2476, #ff512f);
-  background: linear-gradient(to right, #dd2476, #ff512f);
+.fa-comments {
+  font-size: 8rem;
 }
 
+#card-2 {
+  background: #ff512f;
+  background-image: -webkit-linear-gradient(to right, #FBCFD4, #F2ABB4);  /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(to right, #FBCFD4, #F2ABB4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* background: -webkit-linear-gradient(to right, #dd2476, #ff512f);
+  background: linear-gradient(to right, #dd2476, #ff512f); */
+}
+
+#card-2 i {
+  
+}
 /* Mobile Responsive */
 @media screen and (max-width: 1100px) {
   .main__container {
@@ -507,6 +527,7 @@
   .main__content p {
     margin-top: 1rem;
     font-size: 1.5rem;
+    color: #000000;
   }
 }
 
@@ -518,7 +539,10 @@
 
   .fa-users,
   .fa-layer-group {
-    font-size: 4rem;
+    font-size: 8rem;
+  }
+  .fa-comments {
+    font-size: 6rem;
   }
 
   .main__content h1 {
@@ -531,6 +555,7 @@
 
   .main__content p {
     margin-top: 2rem;
+    color: #000000;
   }
 
   .main__btn {
@@ -572,7 +597,7 @@
   margin: 10px;
   height: 425px;
   width: 300px;
-  border-radius: 4px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
