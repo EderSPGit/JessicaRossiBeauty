@@ -10,8 +10,6 @@
   background: #ee9ca7;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #ffffff, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #ffffff, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
   height: 150px;
   display: flex;
   justify-content: center;
@@ -48,45 +46,7 @@
   padding-top: 20px;
   padding-bottom: 20px;
   height: 80%;
-
-  /* padding-top: 10px; */
-  /* height: 70px; */
 }
-
-/* #contact-us-icons {
-  font-size: 400%; 
-  padding: 20px;
-  background-color: #11BA33;
-  border-radius: 47px;
-  color: white;
-}
- */
-
-
-/* #cosmeticsbg {
-  display: block;
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-} */
-
-/* #navbar__logo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-} */
 
 .navbar__menu {
   display: flex;
@@ -140,8 +100,6 @@
   transition: all 0.3s ease;
 }
 
-
-
 @media screen and (max-width: 960px) {
   .navbar__container {
     display: flex;
@@ -181,20 +139,6 @@
     height: 110px;
     margin-left: 40px;
     margin-right: auto;
-    
-    /* padding-top: 20px;
-    padding-right: 50px;
-    padding-bottom: 20px;
-    padding-left: 20px; */
-    
-
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 15px;
-    padding-right: 25px;
-    padding-left: 0px;
-    height: 70px; */
   }
 
   .navbar__toggle .bar {
@@ -256,8 +200,6 @@
   background: #ee9ca7;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* background: #000000;
-  background: linear-gradient(to right, #161616, #000000); */
   padding: 200px 0;
 }
 
@@ -301,16 +243,6 @@
 .hero__description {
   font-size: 40px;
   background: #000000; /* fallback for old browsers */
-  /* background: -webkit-linear-gradient(
-    to right,
-    #9114ff,
-    #da22ff);  */
-    /* Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(
-    to right,
-    #000000,
-    #000000);  */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -360,8 +292,6 @@
 .main__content h1 {
   font-size: 2.5rem;
   background-color: #fe3b6f;
-  /* background-image: linear-gradient(to top, #ff087b 0%, #ed1a52 100%); */
-
   background-image: -webkit-linear-gradient(
     to bottom,
     #FF00FF,
@@ -385,16 +315,6 @@
 .main__content h2 {
   font-size: 2rem;
   background: #000000; /* fallback for old browsers */
-  /* background: -webkit-linear-gradient(
-    to right,
-    #9114ff,
-    #da22ff);  */
-  /* Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(
-    to right,
-    #8f0eff,
-    #da22ff);  */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -453,13 +373,11 @@
 }
 
 #explore__btn {
-  /* padding-right: 10px; */
   margin-right: 10px;
 }
 
 #gallery__btn {
   margin-left: 10px;
-  /* padding-left: 10px; */
   background: #333333;
   background: -webkit-linear-gradient(to bottom, #333333,#000000);
   background: linear-gradient(to bottom, #333333,#000000);
@@ -507,14 +425,8 @@
   background: #ff512f;
   background-image: -webkit-linear-gradient(to right, #FBCFD4, #F2ABB4);  /* Chrome 10-25, Safari 5.1-6 */
   background-image: linear-gradient(to right, #FBCFD4, #F2ABB4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  /* background: -webkit-linear-gradient(to right, #dd2476, #ff512f);
-  background: linear-gradient(to right, #dd2476, #ff512f); */
 }
 
-#card-2 i {
-  
-}
 /* Mobile Responsive */
 @media screen and (max-width: 1100px) {
   .main__container {
@@ -697,8 +609,6 @@ dialog::backdrop {
   }
 }
 
-
-
 /* Footer CSS */
 .footer__container {
   background-color: #131313;
@@ -710,17 +620,8 @@ dialog::backdrop {
 }
 
 #footer__logo {
-  
   width: 230px;
   height: auto;
-
-
-  /* color: #fff;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem; */
 }
 
 .footer__links {
