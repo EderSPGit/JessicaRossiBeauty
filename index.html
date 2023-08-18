@@ -17,7 +17,7 @@
     <nav class="navbar">
       <div class="navbar__container">
         <!-- <a href="#home" id="navbar__logo">Jessica Rossi Beauty</a> -->
-        <img src="img/Logo Jessica Rossi Beauty 1283x295 png.png" id="navbar__logo" alt="JRB Logo-large">
+        <a href="#home"><img src="img/Logo Jessica Rossi Beauty 1283x295 png.png" id="navbar__logo" alt="JRB Logo-large"></a>
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>
@@ -48,7 +48,12 @@
         <!-- <img src="img/cosmetics beauty background 1276x704 png.png" id="cosmeticsbg" alt="cosmetics bg"> -->
         <h1 class="hero__heading">Be your <span>best</span> version</h1>
         <p class="hero__description">Check out our beauty treatments!</p>
-        <button class="main__btn"><a href="#services">Explore</a></button>
+        
+        <div>
+          <button class="main__btn" id="explore__btn"><a href="#services">Explore</a></button>
+          <button class="main__btn" id="gallery__btn"><a href="/"><i class="fas fa-camera" style="font-size: 80%; padding-right: 10px;"></i>Gallery</a></button>
+        </div>
+        
       </div>
     </div>
 
@@ -61,7 +66,7 @@
         <div class="main__content">
           <h1 style="text-transform: initial;">About</h1>
           <h2>We are a beauty salon specialized in eyebrow design, eyelash perming, waxing, threading, facial and body treatments.</h2>
-          <p style="font-weight: 400;">Learn more about our services!</p>
+          <p style="font-weight: 400; font-size: 25px;">Learn more about our services!</p>
           <button class="main__btn"><a href="#services">Services</a></button>
         </div>
       </div>
@@ -85,7 +90,7 @@
         </div>
         <div class="services__card">
           <h2>Massage</h2>
-          <p>Relax, Release. Rebalance.</p>
+          <p>Relax, Release, Rebalance.</p>
           <div class="services__btn"><button>View Pricelist</button></div>
         </div>
         <div class="services__card">
@@ -105,14 +110,15 @@
             <i class="fas fa-comments"></i>
           </div>
         </div>
-
-        <div class="main__content">
+          
+          <div class="main__content">
           <h1>Contact Us</h1>
-          <h2>Make a booking through whatsapp</h2>
-          <button class="main__btn"><a href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments.">WhatsApp</a></button>
-
-          <h2>Or check us out at Instagram</h2>
-          <button class="main__btn"><a href="https://www.instagram.com/jessicarossibeauty/">Instagram</a></button>
+          <p>Make a booking through whatsapp or instagram!</p>
+            <div>
+              <!-- <a href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments."><i class="fab fa-whatsapp" id="contact-us-icons"></i></a> -->
+              <button class="main__btn" id="whatsapp__btn"><a href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments."><i class="fab fa-whatsapp" style="font-size: 80%; padding-right: 10px;"></i>WhatsApp</a></button>
+              <button class="main__btn"><a href="https://www.instagram.com/jessicarossibeauty/"><i class="fab fa-instagram" style="font-size: 80%; padding-right: 10px;"></i>Instagram</a></button>
+            </div>
         </div>
         
       </div>
@@ -124,8 +130,10 @@
         <div class="footer__link--wrapper">
           <div class="footer__link--items">
             <h2>About Us</h2>
-            <a href="#about">Who are we</a> <a href="/">Testimonials</a>
-            <a href="/">Careers</a> <a href="/">Terms of Service</a>
+            <a href="#about">Who are we</a> 
+            <!-- <a href="/">Testimonials</a> -->
+            <!-- <a href="/">Careers</a>  -->
+            <!-- <a href="/">Terms of Service</a> -->
           </div>
           <div class="footer__link--items">
             <h2>Contact Us</h2>
