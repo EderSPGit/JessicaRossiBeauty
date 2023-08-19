@@ -155,8 +155,12 @@
   -moz-text-fill-color: transparent;
 }
 
+.hero__container__buttons{
+  justify-content: center;
+}
+
 .highlight {
-  border-bottom: 4px solid #9c0075;
+  border-bottom: 2px solid #9c0075;
 }
 
 /* About Section */
@@ -178,6 +182,19 @@
   padding: 0 50px;
 }
 
+.h2-wrap h2{
+  /* margin: 50px; */
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 20px;
+}
+
+#map {
+  height: 350px;
+  width: 500px;
+  border: 0;
+}
+
 .main__content {
   color: #fff;
   width: 100%;
@@ -185,7 +202,7 @@
 }
 
 .main__content h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   background-color: #fe3b6f;
   background-image: -webkit-linear-gradient(
     to bottom,
@@ -232,8 +249,7 @@
   padding: 20px 60px;
   border: none;
   border-radius: 4px;
-  /* margin-top: 1rem; */
-  /* margin-bottom: 2rem; */
+  margin: 1rem;
   cursor: pointer;
   position: relative;
   transition: all 0.15s;
@@ -267,12 +283,8 @@
   width: 100%;
 }
 
-#explore__btn {
-  margin-right: 10px;
-}
-
 #gallery__btn {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   background: #333333;
   background: -webkit-linear-gradient(to bottom, #333333,#000000);
   background: linear-gradient(to bottom, #333333,#000000);
@@ -294,6 +306,7 @@
 
 .main__img--container {
   text-align: center;
+  padding: 10px;
 }
 
 .main__img--card {
@@ -358,7 +371,7 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   margin-bottom: 5rem;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .services__wrapper {
@@ -552,6 +565,22 @@ dialog::backdrop {
   }
 }
 
+@media screen and (min-width: 1100px) {
+  
+  .main__content button{
+    margin-left: 0px;
+  }
+
+  #card-1 {
+    padding-bottom: 320px;
+  }
+
+  .main__content h2 {
+    font-size: 2rem;
+    padding-right: 40px;
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .main__container {
     display: grid;
@@ -575,22 +604,17 @@ dialog::backdrop {
 
   .main__content {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-left: 0px;
   }
 
   .main__content h1 {
-    font-size: 2.5rem;
     margin-top: 2rem;
   }
 
   .main__content h2 {
     font-size: 2rem;
-  }
-
-  .main__content p {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    color: #000000;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -617,8 +641,11 @@ dialog::backdrop {
     z-index: -1;
   }
 
+  /*__________Mobile Hamburger Menu__________*/
   .navbar__menu.active {
-    background: #e2a3b9;
+    /* background: #e2a3b9; */
+    background: #da8f95;
+    border-bottom: 2px solid #ffffff;
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
@@ -645,6 +672,7 @@ dialog::backdrop {
 
   .navbar__links {
     color: #ffffff;
+    border-bottom: 2px solid #e7adb1;
     text-align: center;
     padding: 2rem;
     width: 100%;
@@ -675,21 +703,27 @@ dialog::backdrop {
     display: block;
     cursor: pointer;
   }
-
+  /*mobile-menu close button "X" MIDDLE*/
   #mobile-menu.is-active .bar:nth-child(2) {
     opacity: 0;
   }
 
+  /*mobile-menu close button "X" TOP*/
   #mobile-menu.is-active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-
+  /*mobile-menu close button "X" BOTTOM*/
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
 
 @media screen and (max-width: 820px) {
+
+  .main__content h2{
+    font-size: 1.5rem;
+  }
+
   .footer__links {
     padding-top: 2rem;
   }
@@ -726,6 +760,17 @@ dialog::backdrop {
   }
 }
 
+@media screen and (max-width: 600px) {
+  #map{
+    height: 200px;
+    width: 300px;
+  }
+
+  .main__content h2 {
+    font-size: 1rem;
+  }
+}  
+
 @media screen and (max-width: 480px) {
   .main__img--card {
     width: 250px;
@@ -743,18 +788,10 @@ dialog::backdrop {
   .main__content h1 {
     margin-top: 3rem;
   }
-  .main__content h2 {
-    font-size: 2rem;
-  }
 
   .main__content p {
     margin-top: 2rem;
     color: #000000;
-  }
-
-  .main__btn {
-    padding: 12px 36px;
-    margin: 2.5rem 0;
   }
 
   .footer__link--items {
