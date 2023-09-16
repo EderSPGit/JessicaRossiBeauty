@@ -434,17 +434,6 @@
   background-color: #292929
 }
 
-dialog {
-  border-radius: 0.25rem;
-  border-width: 1px;
-  width: 50%;
-  height: 30%;
-}
-
-dialog::backdrop {
-  background-color: hsl(0, 0%, 0%, 0.3);
-}
-
 .services__card button {
   color: #fff;
   padding: 14px 24px;
@@ -826,3 +815,62 @@ dialog::backdrop {
     margin-top: 10px;
   }
 }
+
+/* <DIALOG>*/
+#centerpoint{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+dialog {
+  position: fixed;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  /* width: 50%;
+  height: 30%; */
+  background: #ccc;
+}
+
+dialog::backdrop {
+  background-color: hsla(0, 0%, 0%, 0.6);
+}
+/* </DIALOG> */
+
+/* <PRICELIST TABS>*/
+.mytabs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+}
+.mytabs input[type="radio"] {
+  display: none;
+}
+.mytabs label {
+  padding: 25px;
+  background: #e2e2e2;
+  font-weight: bold;
+}
+
+.mytabs .tab {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  order: 1;
+  display: none;
+}
+.mytabs .tab h2 {
+  font-size: 2em;
+}
+
+/*__________For */
+.mytabs input[type='radio']:checked + label + .tab {
+  display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+  background: #fff;
+}
+/* </PRICELIST TABS> */

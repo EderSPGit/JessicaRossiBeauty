@@ -81,6 +81,9 @@
       </div>
     </div>
 
+
+
+    
     <!-- Services Section -->
     <div class="services" id="services">
       <h1>Our Services</h1>
@@ -90,25 +93,96 @@
           <p>Give them the deserved care.</p>
 
           
-          <div class="services__btn"><button>View Pricelist</button></div>
+          <div class="services__btn"><button onclick="modal.showModal(document.getElementById('tab__eyes').click());">View Pricelist</button></div>
         </div>
         <div class="services__card">
           <h2>Facial Treatments</h2>
           <p>For a smooth and glowing skin.</p>
-          <div class="services__btn"><button>View Pricelist</button></div>
+          <div class="services__btn"><button onclick="modal.showModal(document.getElementById('tab__facial').click());">View Pricelist</button></div>
         </div>
         <div class="services__card">
           <h2>Massage</h2>
           <p>Relax, Release, Rebalance.</p>
-          <div class="services__btn"><button>View Pricelist</button></div>
+          <div class="services__btn"><button onclick="modal.showModal(document.getElementById('tab__massage').click());">View Pricelist</button></div>
         </div>
         <div class="services__card">
           <h2>Waxing & Threading</h2>
           <p>Silky legs for days.</p>
-          <div class="services__btn"><button>View Pricelist</button></div>
+          <div class="services__btn"><button onclick="modal.showModal(document.getElementById('tab__waxing').click());">View Pricelist</button></div>
         </div>
       </div>
     </div>
+
+    <div id="centerpoint">    
+      <!-- <DIALOG> -->
+      <dialog data-modal>
+        <!-- <PRICELIST TABS> -->
+        <div class="mytabs">
+          <input type="radio" id="tab__eyes" name="mytabs" checked="checked">
+          <label for="tab__eyes">Eyes</label>
+          <div class="tab">
+            <h2>Eye Treatments Pricelist</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+      
+          <input type="radio" id="tab__facial" name="mytabs">
+          <label for="tab__facial">Facial</label>
+          <div class="tab">
+            <h2>Facial Treatments Pricelist</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+      
+          <input type="radio" id="tab__massage" name="mytabs">
+          <label for="tab__massage">Massage</label>
+          <div class="tab">
+            <h2>Massage Pricelist</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+      
+          <input type="radio" id="tab__waxing" name="mytabs">
+          <label for="tab__waxing">Waxing</label>
+          <div class="tab">
+            <h2>Waxing & Threading Pricelist</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+        <!-- </PRICELIST TABS> -->
+
+        <button onclick="modal.close();">Close</button>
+      </dialog>
+      <!-- </DIALOG> -->
+    </div>
+
+    <!-- <DIALOG/MODAL js function> -->
+    <script>    
+      // const openButton = document.querySelector("[data-open-modal]");
+      // openButton.addEventListener("click", () => {
+      //     modal.showModal();
+      // });
+
+      // const closeButton = document.querySelector("[data-close-modal]");
+      // closeButton.addEventListener("click", () => {
+      //     modal.close();
+      // });
+
+      //function to close dialog/modal if user clicks outsite of it
+      const modal = document.querySelector("[data-modal]");
+
+      modal.addEventListener("click", e => {
+          const dialogDimensions = modal.getBoundingClientRect(); 
+              if (
+                  e.clientX < dialogDimensions.left ||
+                  e.clientX > dialogDimensions.right ||
+                  e.clientY < dialogDimensions.top ||
+                  e.clientY > dialogDimensions.bottom
+              ) {
+                  modal.close();
+                }
+      });
+    </script>
+  <!-- </DIALOG/MODAL js function> -->
 
     <!-- Features Section -->
     <div class="main" id="contact">
