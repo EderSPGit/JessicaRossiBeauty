@@ -1,4 +1,7 @@
-Simple website created using HTML, CSS &amp; Javascript with smooth scroll effect
+This is Jessica Rossi Beauty's first responsive website. Jessica Rossi Beauty is a small beauty business situated in Dublin Ireland aiming to reach more customers with it's new website as well as to have more availability to public reach online.
 
-Watch the full tutorial on how I built this website on my Youtube @Brian Design https://youtu.be/3-2Pj5hxwrw
+Technologies: 
+- HTML 
+- CSS 
+- Javascript
 

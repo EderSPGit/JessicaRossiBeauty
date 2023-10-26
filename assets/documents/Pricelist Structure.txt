@@ -1,0 +1,15 @@
+Pricelist Structure
+
+Eyebrow Design 15min 15$ Book
+Description
+
+
+Structure
+<div class="block-treatment" id="eyes-block">
+Label(EYES)
+
+header(Eyebrow)
+
+treatment-name, treatment-duration, treatment-price treatment-book
+treatment-description
+</div
