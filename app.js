@@ -25,27 +25,38 @@ navLogo.addEventListener('click', hideMobileMenu);
 // Show active menu when scrolling
 const highlightMenu = () => {
   const elem = document.querySelector('.highlight');
-  const homeMenu = document.querySelector('#home-page');
-  const aboutMenu = document.querySelector('#about-page');
-  const servicesMenu = document.querySelector('#services-page');
+  const homeNav = document.querySelector('#home-navbar');
+  const aboutNav = document.querySelector('#about-navbar');
+  const servicesNav = document.querySelector('#services-navbar');
+  const contactNav = document.querySelector('#contact-navbar');
   let scrollPos = window.scrollY;
+  console.log(scrollPos);
   // console.log(scrollPos);
 
   // adds 'highlight' class to my menu items
   if (window.innerWidth > 960 && scrollPos < 600) {
-    homeMenu.classList.add('highlight');
-    aboutMenu.classList.remove('highlight');
-    servicesMenu.classList.remove('highlight');
+    homeNav.classList.add('highlight');
+    aboutNav.classList.remove('highlight');
+    servicesNav.classList.remove('highlight');
+    contactNav.classList.remove('highlight');
     return;
-  } else if (window.innerWidth > 960 && scrollPos < 1400) {
-    aboutMenu.classList.add('highlight');
-    homeMenu.classList.remove('highlight');
-    servicesMenu.classList.remove('highlight');
+  } else if (window.innerWidth > 960 && scrollPos < 1800) {
+    aboutNav.classList.add('highlight');
+    homeNav.classList.remove('highlight');
+    servicesNav.classList.remove('highlight');
+    contactNav.classList.remove('highlight');
     return;
-  } else if (window.innerWidth > 960 && scrollPos < 2345) {
-    servicesMenu.classList.add('highlight');
-    homeMenu.classList.remove('highlight');
-    aboutMenu.classList.remove('highlight');
+  } else if (window.innerWidth > 960 && scrollPos < 2700) {
+    servicesNav.classList.add('highlight');
+    homeNav.classList.remove('highlight');
+    aboutNav.classList.remove('highlight');
+    contactNav.classList.remove('highlight');
+    return;
+  } else if (window.innerWidth > 960 && scrollPos < 4300) {
+    contactNav.classList.add('highlight');
+    servicesNav.classList.remove('highlight');
+    homeNav.classList.remove('highlight');
+    aboutNav.classList.remove('highlight');
     return;
   }
 
@@ -57,3 +68,29 @@ const highlightMenu = () => {
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
 
+//function to close dialog/modal if user clicks outsite of it
+const priceListDialog = document.querySelector("[price-list]");
+priceListDialog.addEventListener("click", e => {
+const dialogDimensions = priceListDialog.getBoundingClientRect();
+checkDialogBounds(priceListDialog, dialogDimensions, e);
+});
+
+const policyDialog = document.querySelector("[appointment-policy]");
+policyDialog.addEventListener("click", e => {
+const dialogDimensions = policyDialog.getBoundingClientRect();       
+checkDialogBounds(policyDialog, dialogDimensions, e);
+});
+
+//reusable function to open/close dialog
+function checkDialogBounds(dialogName, dialogDimensions, e) {
+  if (e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom) {
+      console.log("OUT OF BOUND, X: "+ e.clientX + " Y: "+e.clientY );
+      dialogName.close();
+  }
+  else {
+      console.log("X: "+ e.clientX + " Y: "+e.clientY );
+  }
+}
