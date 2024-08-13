@@ -81,6 +81,12 @@ const dialogDimensions = policyDialog.getBoundingClientRect();
 checkDialogBounds(policyDialog, dialogDimensions, e);
 });
 
+const galleryDialog = document.querySelector("[gallery-dialog]");
+galleryDialog.addEventListener("click", e => {
+const dialogDimensions = galleryDialog.getBoundingClientRect();       
+checkDialogBounds(galleryDialog, dialogDimensions, e);
+});
+
 //reusable function to open/close dialog
 function checkDialogBounds(dialogName, dialogDimensions, e) {
   if (e.clientX < dialogDimensions.left ||

@@ -860,7 +860,11 @@ dialog::backdrop {
   #contact-navbar {
     display: none;
   }
-
+  .description-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -969,13 +973,6 @@ dialog::backdrop {
   }
 }
 
-@media screen and (max-width: 881px) {
- .mytabs {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
- }
-}
-
 @media screen and (max-width: 820px) {
 /* 
   #navbar__logo {
@@ -1045,6 +1042,12 @@ dialog::backdrop {
     padding-right: 20px;
     font-weight: 200;
   }
+  
+  .description-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -1108,6 +1111,11 @@ dialog::backdrop {
     width: 90%;
     max-width: 400px;
   }
+
+  .mytabs {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+   }
 }
 
 @media screen and (max-width:468px) {
