@@ -68,12 +68,34 @@ const highlightMenu = () => {
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
 
-//function to close dialog/modal if user clicks outsite of it
+
+// const priceListDialog = document.getElementById('price-list-content');
 const priceListDialog = document.querySelector("[price-list]");
+
+function openPriceListDialog(tabId) {
+  fetch('price-list-content.html')//load page
+    .then(response => response.text())
+    .then(data => {
+      priceListDialog.innerHTML = data;//inject page into dialog within index.html
+      
+      //handler to show modal only if element of id provided exists
+      const tabElement = document.getElementById(tabId);
+      if (tabElement) {
+        priceListDialog.showModal(tabElement);
+      } else {
+        console.error(`Element with ID ${tabId} not found.`);
+      }
+    })
+    .catch(error => console.error('Error loading gallery content:', error));
+}
+
+// listener to get bounds to close if user clicks outside of dialog
 priceListDialog.addEventListener("click", e => {
 const dialogDimensions = priceListDialog.getBoundingClientRect();
 checkDialogBounds(priceListDialog, dialogDimensions, e);
 });
+
+
 
 const policyDialog = document.querySelector("[appointment-policy]");
 policyDialog.addEventListener("click", e => {
@@ -81,11 +103,11 @@ const dialogDimensions = policyDialog.getBoundingClientRect();
 checkDialogBounds(policyDialog, dialogDimensions, e);
 });
 
-const galleryDialog = document.querySelector("[gallery-dialog]");
-galleryDialog.addEventListener("click", e => {
-const dialogDimensions = galleryDialog.getBoundingClientRect();       
-checkDialogBounds(galleryDialog, dialogDimensions, e);
-});
+// const galleryDialog = document.querySelector("[gallery-dialog]");
+// galleryDialog.addEventListener("click", e => {
+// const dialogDimensions = galleryDialog.getBoundingClientRect();       
+// checkDialogBounds(galleryDialog, dialogDimensions, e);
+// });
 
 //reusable function to open/close dialog
 function checkDialogBounds(dialogName, dialogDimensions, e) {
