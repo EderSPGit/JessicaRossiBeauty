@@ -92,7 +92,7 @@ function openPriceListDialog(tabId) {
       //handler to show modal only if element of id provided exists
       const tabElement = document.getElementById(tabId);
       if (tabElement) {
-        priceListDialog.showModal(tabElement);
+        priceListDialog.showModal(tabElement.click());
       } else {
         console.error(`Element with ID ${tabId} not found.`);
       }
