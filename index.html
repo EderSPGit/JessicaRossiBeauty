@@ -2,10 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jessica Rossi Beauty</title>
     <link rel="shortcut icon" type="x-icon" href="assets/img/jr-favicon3.png" />
+
+    <!-- Main CSS-->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Gallery CSS-->
+    <link rel="stylesheet" href="gallery.css" />
+
+    <!-- Swiper CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Website Icons CSS -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -13,11 +26,12 @@
       crossorigin="anonymous"
     />
     <!--date and time picker-->
+
+    <!-- Flat Pickr MAP CSS-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
-    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
   </head>
   <body>
     <!-- Navbar Section -->
@@ -79,7 +93,7 @@
           <button
             class="main__btn"
             id="gallery__btn"
-            onclick="openGalleryDialog('tab-eyes');"
+            onclick="openGalleryDialog();"
             style="color: #fff"
           >
             <i
@@ -101,7 +115,7 @@
     </div>
 
     <dialog gallery-dialog>
-      <!-- content is coming from gallery-content.html through js script of id 'galleryContent' -->
+      <!-- content is coming from gallery-content.html through js script function 'openGalleryDialog' -->
     </dialog>
 
     <!-- About Section -->
@@ -418,6 +432,7 @@
       </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="app.js"></script>
 
     <!--date and time picker-->

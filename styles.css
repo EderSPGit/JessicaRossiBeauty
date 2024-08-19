@@ -13,40 +13,60 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth !important;
 }
 
 h1 {
-  font-family: 'Open Sans Bold', sans-serif;
+  font-family: "Open Sans Bold", sans-serif;
 }
 
-body{
- --light-gray: rgb(99, 103, 109);
- --dark-gray: #494f55;
- --blackbtn: #161616;
- --blackbtn-hover: #262626;
- --orangebtn: rgb(255,193,7);
- --orangebtn-hover: rgb(255,200,50);
- 
- --pink: #ee0979;
- --pink-theme: #ee9ca7;
- --dark-pink :#d68d97;
- --light-pink-theme: #ffdde1;
- --pink-gradient-platform1: -webkit-linear-gradient(to right, #FBCFD4, #F2ABB4); /* Chrome 10-25, Safari 5.1-6 */
- --pink-gradient-platform2: linear-gradient(to right, #FBCFD4, #F2ABB4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- 
- --pink-gradient-neg-platform1: -webkit-linear-gradient(to bottom, #FBCFD4, #F2ABB4); /* Chrome 10-25, Safari 5.1-6 */
- --pink-gradient-neg-platform2: linear-gradient(to bottom, #FBCFD4, #F2ABB4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body {
+  --light-gray: rgb(99, 103, 109);
+  --dark-gray: #494f55;
+  --blackbtn: #161616;
+  --blackbtn-hover: #262626;
+  --orangebtn: rgb(255, 193, 7);
+  --orangebtn-hover: rgb(255, 200, 50);
 
- /* --purple-theme: #9C0075; */
- --purple: #9C0075;
- --dark-purple: rgb(90, 0, 80);
- --purple-grad-platform1: -webkit-linear-gradient(to bottom, #FF00FF, #6B0050);
- --purple-grad-platform2: linear-gradient(to bottom, #FF00FF, #6B0050);
- 
- --purple-grad-neg-platform1: -webkit-linear-gradient(to bottom, #6B0050, #9c009c);
- --purple-grad-neg-platform2: linear-gradient(to bottom, #6B0050, #9c009c);
+  --pink: #ee0979;
+  --pink-theme: #ee9ca7;
+  --dark-pink: #d68d97;
+  --light-pink-theme: #ffdde1;
+  --pink-gradient-platform1: -webkit-linear-gradient(
+    to right,
+    #fbcfd4,
+    #f2abb4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  --pink-gradient-platform2: linear-gradient(
+    to right,
+    #fbcfd4,
+    #f2abb4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  --pink-gradient-neg-platform1: -webkit-linear-gradient(
+    to bottom,
+    #fbcfd4,
+    #f2abb4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  --pink-gradient-neg-platform2: linear-gradient(
+    to bottom,
+    #fbcfd4,
+    #f2abb4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* --purple-theme: #9C0075; */
+  --purple: #9c0075;
+  --dark-purple: rgb(90, 0, 80);
+  --purple-grad-platform1: -webkit-linear-gradient(to bottom, #ff00ff, #6b0050);
+  --purple-grad-platform2: linear-gradient(to bottom, #ff00ff, #6b0050);
+
+  --purple-grad-neg-platform1: -webkit-linear-gradient(
+    to bottom,
+    #6b0050,
+    #9c009c
+  );
+  --purple-grad-neg-platform2: linear-gradient(to bottom, #6b0050, #9c009c);
 }
 
 .navbar {
@@ -87,7 +107,7 @@ body{
   height: 80px;
 }
 
-.pricelist__logo__wrapper{
+.pricelist__logo__wrapper {
   text-align: center;
 }
 
@@ -125,7 +145,7 @@ body{
   margin-right: 15px;
 }
 
-.button.appointment__btn:hover{
+.button.appointment__btn:hover {
   background: var(--purple);
   background: var(--purple-grad-neg-platform1);
   background: var(--purple-grad-neg-platform2);
@@ -156,7 +176,7 @@ body{
 
 /* Hero Section */
 .hero {
-  background: var(--pink-theme);  /* fallback for old browsers */
+  background: var(--pink-theme); /* fallback for old browsers */
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
   padding: 200px 0;
@@ -201,8 +221,8 @@ body{
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
- 
-.hero__container__buttons{
+
+.hero__container__buttons {
   justify-content: center;
 }
 
@@ -230,7 +250,7 @@ body{
   padding: 0 50px;
 }
 
-.h2-wrap h2{
+.h2-wrap h2 {
   font-weight: 400;
   text-align: justify;
   text-justify: inter-word;
@@ -282,7 +302,7 @@ body{
 
 .contact-description {
   /* max-width: 100px; */
-  
+
   text-align: justify;
 }
 
@@ -333,8 +353,8 @@ body{
 #gallery__btn {
   /* margin-left: 10px; */
   background: #333333;
-  background: -webkit-linear-gradient(to bottom, #333333,#000000);
-  background: linear-gradient(to bottom, #333333,#000000);
+  background: -webkit-linear-gradient(to bottom, #333333, #000000);
+  background: linear-gradient(to bottom, #333333, #000000);
 }
 
 #gallery__btn:hover {
@@ -343,14 +363,14 @@ body{
 
 #whatsapp__btn {
   margin-right: 10px;
-  background: #3AE85A;
-  background: -webkit-linear-gradient(to bottom, #41EE61,#11BA33);
-  background: linear-gradient(to bottom, #41EE61,#11BA33);
+  background: #3ae85a;
+  background: -webkit-linear-gradient(to bottom, #41ee61, #11ba33);
+  background: linear-gradient(to bottom, #41ee61, #11ba33);
 }
 #whatsapp__btn:hover {
   background: #008a1c;
-  background: -webkit-linear-gradient(to bottom, #008a1c, #41EE61);
-  background: linear-gradient(to bottom, #008a1c, #41EE61);
+  background: -webkit-linear-gradient(to bottom, #008a1c, #41ee61);
+  background: linear-gradient(to bottom, #008a1c, #41ee61);
 }
 
 .main__img--container {
@@ -388,7 +408,7 @@ body{
 
 /*__________Services Section__________*/
 .services {
-  background: var(--pink-theme);  /* fallback for old browsers */
+  background: var(--pink-theme); /* fallback for old browsers */
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
   display: flex;
@@ -427,12 +447,7 @@ body{
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  background-image: linear-gradient(
-    -225deg,
-    #FFFFFF,
-    #FF00FF,
-    #000000
-  );
+  background-image: linear-gradient(-225deg, #ffffff, #ff00ff, #000000);
   transition: 0.3s ease-in;
 }
 
@@ -441,22 +456,17 @@ body{
   background: -webkit-linear-gradient(
     to right,
     #700056,
-    #FF00FF
+    #ff00ff
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #700056,
-    #FF00FF
+    #ff00ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .services-card:nth-child(3) {
-  background-image: linear-gradient(
-    -225deg,
-    #FF00FF,
-    #7B0062,
-    #000000
-  );
+  background-image: linear-gradient(-225deg, #ff00ff, #7b0062, #000000);
 }
 
 .services-card h2 {
@@ -595,7 +605,7 @@ dialog {
   border-radius: 0.25rem;
   border-width: 0px;
   width: 80%;
-  background: var(--pink-theme);  /* fallback for old browsers */
+  background: var(--pink-theme); /* fallback for old browsers */
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
 }
@@ -622,7 +632,6 @@ dialog::backdrop {
 
 .modal-close-btn {
   background: var(--blackbtn);
-  
 }
 
 .modal-close-btn:hover {
@@ -688,7 +697,7 @@ dialog::backdrop {
   padding: 1rem;
   font-weight: 600;
   border-width: 1px;
-  border-color: #F2ABB4;
+  border-color: #f2abb4;
   background-color: rgb(255, 247, 247);
   text-align: center;
 }
@@ -735,17 +744,17 @@ dialog::backdrop {
   grid-template-rows: repeat(1, 1fr);
 }
 
-.dialog-footer-item{
+.dialog-footer-item {
   text-align: center;
 }
 
 .footer-close-btn {
-  text-align: right; 
+  text-align: right;
   margin-right: 5px;
 }
 
 .footer-policy-btn {
-  text-align: left; 
+  text-align: left;
   margin-left: 5px;
 }
 
@@ -774,7 +783,6 @@ dialog::backdrop {
   font-style: italic;
   border-bottom: 1px solid #000000;
   width: fit-content;
-  
 }
 
 .policy-content {
@@ -806,13 +814,11 @@ dialog::backdrop {
   }
 
   .main__img--card {
-
   }
 }
 
 @media screen and (min-width: 1100px) {
-  
-  .main__content button{
+  .main__content button {
     margin-left: 0px;
   }
 
@@ -974,7 +980,7 @@ dialog::backdrop {
 }
 
 @media screen and (max-width: 820px) {
-/* 
+  /* 
   #navbar__logo {
     margin-left: 40%;
     margin-right: 60%;
@@ -1016,7 +1022,6 @@ dialog::backdrop {
 }
 
 @media screen and (max-width: 768px) {
-
   #navbar__logo {
     margin-left: 15vw;
     margin-top: 35px;
@@ -1042,7 +1047,7 @@ dialog::backdrop {
     padding-right: 20px;
     font-weight: 200;
   }
-  
+
   .description-btns {
     display: flex;
     flex-direction: column;
@@ -1051,14 +1056,13 @@ dialog::backdrop {
 }
 
 @media screen and (max-width: 599px) {
-
   #navbar__logo {
     height: 78px;
     margin-left: 10vw;
     margin-top: 40px;
   }
 
-  #map{
+  #map {
     height: 200px;
     width: 300px;
   }
@@ -1103,8 +1107,8 @@ dialog::backdrop {
     font-size: 11px;
     grid-column: span 3;
   }
-}  
-@media screen and (max-width:881px) {
+}
+@media screen and (max-width: 881px) {
   .jrb__pricelist__logo {
     padding: 3%;
     padding-right: 5%;
@@ -1115,10 +1119,10 @@ dialog::backdrop {
   .mytabs {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-   }
+  }
 }
 
-@media screen and (max-width:468px) {
+@media screen and (max-width: 468px) {
   .jrb__pricelist__logo {
     padding: 0px;
     width: 90%;
@@ -1133,7 +1137,7 @@ dialog::backdrop {
   .treatment-small {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .item_name {
     grid-column: span 2;
     text-align: left;
@@ -1158,12 +1162,12 @@ dialog::backdrop {
   }
 
   .footer-close-btn {
-    text-align: center; 
+    text-align: center;
     margin-right: 0px;
   }
-  
+
   .footer-policy-btn {
-    text-align: center; 
+    text-align: center;
     margin-left: 0px;
   }
 }
@@ -1200,12 +1204,12 @@ dialog::backdrop {
     margin: 0;
     padding: 10px;
     width: 100%;
-  }  
+  }
   #navbar__logo {
     height: 55px;
     margin-left: 5vw;
     margin-top: 45px;
-  }  
+  }
 
   /* .mytabs label { */
 }
