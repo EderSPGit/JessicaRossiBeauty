@@ -1,7 +1,4 @@
 // import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js";
-{
-  /* <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> */
-}
 
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
@@ -36,7 +33,6 @@ const highlightMenu = () => {
   const contactNav = document.querySelector("#contact-navbar");
   let scrollPos = window.scrollY;
   console.log(scrollPos);
-  // console.log(scrollPos);
 
   // adds 'highlight' class to my menu items
   if (window.innerWidth > 960 && scrollPos < 600) {
@@ -74,44 +70,40 @@ window.addEventListener("scroll", highlightMenu);
 window.addEventListener("click", highlightMenu);
 
 const galleryDialog = document.querySelector("[gallery-dialog]");
+// const swiperContainer = document.getElementById("gallery-content");
 
-function openGalleryDialog() {
-  fetch("gallery-content.html") //load page
-    .then((response) => response.text())
-    .then((data) => {
-      galleryDialog.innerHTML = data; //inject page into dialog within index.html
-      galleryDialog.showModal();
+// function openGalleryDialog() {
+//   fetch("gallery-content.html") //load page
+//     .then((response) => response.text())
+//     .then((data) => {
+//       galleryDialog.innerHTML = data; //inject page into dialog within index.html
+//       galleryDialog.showModal();
 
-      // Ensure Swiper is initialized after the content is loaded
-      document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-          const swiper = new Swiper(".#swiper-1", {
-            effect: "fade",
-            pagination: {
-              el: ".#swiper-1 .swiper-pagination",
-              clickable: true,
-            },
-            direction: "vertical",
-            spaceBetween: 30,
-            mousewheel: true,
-          });
-        }, 100);
-      });
-    })
-
-    .catch((error) => console.error("Error loading gallery content:", error));
-}
-
-//SWIPER SCRIPT
-// new Swiper("#swiper-1", {
-//   effect: "fade",
-// });
+//       // Ensure Swiper is initialized after the content is loaded
+//       // galleryDialog.addEventListener("DOMContentLoaded", () => {
+//       //   setTimeout(() => {
+//       //     const swiper = new Swiper(galleryDialog, {
+//       //       effect: "fade",
+//       //       pagination: {
+//       //         el: ".swiper-pagination",
+//       //         clickable: true,
+//       //       },
+//       //       direction: "vertical",
+//       //       spaceBetween: 30,
+//       //       mousewheel: true,
+//       //     });
+//       //   }, 100);
+//       // });
+//     })
+//     .catch((error) => console.error("Error loading gallery content:", error));
+// }
 
 // const priceListDialog = document.getElementById('price-list-content');
-const priceListDialog = document.querySelector("[price-list]");
+const policyDialog = document.querySelector("[appointment-policy]");
+const priceListDialog = document.getElementById("pricelist-dialog");
 
 function openPriceListDialog(tabId) {
-  fetch("price-list-content.html") //load page
+  fetch("pricelist-content.html") //load page
     .then((response) => response.text())
     .then((data) => {
       priceListDialog.innerHTML = data; //inject page into dialog within index.html
@@ -146,9 +138,9 @@ function addDialogEventListener(dialog) {
 function checkDialogBounds(dialogName, dialogDimensions, e) {
   if (
     e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
+    e.clientX > dialogDimensions.right
+    // e.clientY < dialogDimensions.top ||
+    // e.clientY > dialogDimensions.bottom
   ) {
     console.log("OUT OF BOUND, X: " + e.clientX + " Y: " + e.clientY);
     dialogName.close();

@@ -8,15 +8,8 @@
 
     <!-- Main CSS-->
     <link rel="stylesheet" href="styles.css" />
-
     <!-- Gallery CSS-->
-    <link rel="stylesheet" href="gallery.css" />
-
-    <!-- Swiper CSS-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <!-- <link rel="stylesheet" href="gallery.css" /> -->
 
     <!-- Website Icons CSS -->
     <link
@@ -32,6 +25,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
+
+    <!-- Swiper CSS-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </head>
   <body>
     <!-- Navbar Section -->
@@ -79,6 +79,8 @@
       <div class="navbar__container-bottom-string"></div>
     </nav>
 
+    <!-- <gallery-dialog id="galleryDialog"></gallery-dialog> -->
+
     <!-- Hero Section -->
     <div class="hero" id="home">
       <div class="hero__container">
@@ -93,7 +95,7 @@
           <button
             class="main__btn"
             id="gallery__btn"
-            onclick="openGalleryDialog();"
+            onclick="location.href='gallery-content.html'"
             style="color: #fff"
           >
             <i
@@ -113,10 +115,6 @@
         <!-- <button onclick="priceListDialog.showModal(document.getElementById('tab-eyes').click());">View Pricelist</button> -->
       </div>
     </div>
-
-    <dialog gallery-dialog>
-      <!-- content is coming from gallery-content.html through js script function 'openGalleryDialog' -->
-    </dialog>
 
     <!-- About Section -->
     <div class="main" id="about">
@@ -202,11 +200,11 @@
     </div>
 
     <!-- <DIALOG> -->
-    <dialog price-list>
-      <!-- content is coming from price-list-content.html through js script function 'openPriceListDialog' -->
+    <dialog id="pricelist-dialog">
+      <!-- content is coming from pricelist-content.html through js script function 'openPriceListDialog' -->
     </dialog>
 
-    <dialog appointment-policy>
+    <dialog appointment-policy id="policy-dialog">
       <div class="policy-body">
         <div class="policy-content content-1">
           <h3>English:</h3>
@@ -432,7 +430,6 @@
       </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="app.js"></script>
 
     <!--date and time picker-->
@@ -440,33 +437,5 @@
     <script>
       flatpickr("input[type=datetime-local]", {});
     </script>
-
-    <!-- <script>
-      function openGalleryDialog() {
-        const dialog = document.getElementById('galleryContent');
-        fetch('gallery-content.html')
-          .then(response => response.text())
-          .then(data => {
-            dialog.innerHTML = data;
-            dialog.showModal();
-          })
-          .catch(error => console.error('Error loading gallery content:', error));
-      }
-    </script>  -->
-
-    <!-- <script>
-      function openPriceListDialog(tabId) {
-        const priceListDialog = document.querySelector("[price-list]");
-        // const priceListDialog = document.getElementById('price-list-content');
-        fetch('price-list-content.html')
-          .then(response => response.text())
-          .then(data => {
-            priceListDialog.innerHTML = data;
-            priceListDialog.showModal();
-            document.getElementById(tabId).click();
-          })
-          .catch(error => console.error('Error loading price-list content:', error));
-}
-    </script> -->
   </body>
 </html>

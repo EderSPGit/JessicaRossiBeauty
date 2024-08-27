@@ -598,10 +598,9 @@ body {
 /*__________/Mobile Responsiveness__________*/
 
 /* <DIALOG>*/
-dialog {
+#pricelist-dialog {
   position: fixed;
   margin: auto;
-
   border-radius: 0.25rem;
   border-width: 0px;
   width: 80%;
@@ -610,14 +609,29 @@ dialog {
   background: var(--pink-gradient-platform2);
 }
 
-dialog::backdrop {
+#pricelist-dialog::backdrop {
   background-color: hsla(0, 0%, 0%, 0.6);
 }
 
-.dialog-wrapper {
+.pricelist-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#policy-dialog {
+  position: fixed;
+  margin: auto;
+  border-radius: 0.25rem;
+  border-width: 0px;
+  width: 80%;
+  background: var(--pink-theme); /* fallback for old browsers */
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2);
+}
+
+#policy-dialog::backdrop {
+  background-color: hsla(0, 0%, 0%, 0.6);
 }
 
 .regular-btn {
@@ -738,7 +752,7 @@ dialog::backdrop {
   padding-bottom: 0.35rem;
 }
 
-.dialog-footer {
+.pricelist-footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
@@ -1156,7 +1170,7 @@ dialog::backdrop {
 }
 
 @media screen and (max-width: 600px) {
-  .dialog-footer {
+  .pricelist-footer {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
@@ -1210,12 +1224,4 @@ dialog::backdrop {
     margin-left: 5vw;
     margin-top: 45px;
   }
-
-  /* .mytabs label { */
 }
-/* .date-picker {  
-  z-index: 1 !important;
-} */
-
-/* </PRICELIST TABS> */
-/* </DIALOG> */

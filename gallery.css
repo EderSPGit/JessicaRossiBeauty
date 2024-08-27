@@ -1,0 +1,72 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  --pink-gradient-platform1: -webkit-linear-gradient(
+    to right,
+    #fbcfd4,
+    #f2abb4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  --pink-gradient-platform2: linear-gradient(
+    to right,
+    #fbcfd4,
+    #f2abb4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--pink-theme); /* fallback for old browsers */
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #ffffff;
+
+  /* background: var(--pink-theme);
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 95%;
+  height: auto;
+  object-fit: contain;
+  margin-right: 1.5rem;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  background-color: #000000c7;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.top-right-button button {
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(71, 0, 0, 0.6);
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 2;
+}
