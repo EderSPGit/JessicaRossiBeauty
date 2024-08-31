@@ -79,7 +79,9 @@
       <div class="navbar__container-bottom-string"></div>
     </nav>
 
-    <!-- <gallery-dialog id="galleryDialog"></gallery-dialog> -->
+    <dialog id="galleryDialog">
+      <div class="gallery-content"></div>
+    </dialog>
 
     <!-- Hero Section -->
     <div class="hero" id="home">
@@ -92,10 +94,11 @@
           <button class="main__btn" id="explore__btn">
             <a href="#services">Explore</a>
           </button>
+          <!-- onclick="location.href='gallery-content.html'" -->
           <button
             class="main__btn"
             id="gallery__btn"
-            onclick="location.href='gallery-content.html'"
+            onclick="openGalleryDialog();"
             style="color: #fff"
           >
             <i

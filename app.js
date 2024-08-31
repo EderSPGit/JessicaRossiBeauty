@@ -69,34 +69,37 @@ const highlightMenu = () => {
 window.addEventListener("scroll", highlightMenu);
 window.addEventListener("click", highlightMenu);
 
-const galleryDialog = document.querySelector("[gallery-dialog]");
-// const swiperContainer = document.getElementById("gallery-content");
+// const galleryDialog = document.querySelector("[gallery-dialog]");
+// const swiperContainer = document.getElementById("galleryDialog");
+const galleryDialog = document.getElementById("galleryDialog");
+const galleryContentDiv = galleryDialog.querySelector(".gallery-content");
 
-// function openGalleryDialog() {
-//   fetch("gallery-content.html") //load page
-//     .then((response) => response.text())
-//     .then((data) => {
-//       galleryDialog.innerHTML = data; //inject page into dialog within index.html
-//       galleryDialog.showModal();
+function openGalleryDialog() {
+  fetch("gallery-content.html") //load page
+    .then((response) => response.text())
+    .then((data) => {
+      galleryContentDiv.innerHTML = data; //inject page into dialog within index.html
+      galleryDialog.showModal();
 
-//       // Ensure Swiper is initialized after the content is loaded
-//       // galleryDialog.addEventListener("DOMContentLoaded", () => {
-//       //   setTimeout(() => {
-//       //     const swiper = new Swiper(galleryDialog, {
-//       //       effect: "fade",
-//       //       pagination: {
-//       //         el: ".swiper-pagination",
-//       //         clickable: true,
-//       //       },
-//       //       direction: "vertical",
-//       //       spaceBetween: 30,
-//       //       mousewheel: true,
-//       //     });
-//       //   }, 100);
-//       // });
-//     })
-//     .catch((error) => console.error("Error loading gallery content:", error));
-// }
+      // Dynamically set Swiper attributes
+      // const swiperContainer = galleryContentDiv.querySelector(".mySwiper");
+      // swiperContainer.setAttribute("pagination", "true");
+      // swiperContainer.setAttribute("pagination-clickable", "true");
+      // swiperContainer.setAttribute("direction", "vertical");
+      // swiperContainer.setAttribute("space-between", "30");
+      // swiperContainer.setAttribute("mousewheel", "true");
+
+      // Ensure Swiper is initialized after the content is loaded
+    })
+    .catch((error) => console.error("Error loading gallery content:", error));
+}
+
+class GalleryDialog extends HTMLElement {
+  showModal() {
+    // Add your custom implementation here
+    this.style.display = "block";
+  }
+}
 
 // const priceListDialog = document.getElementById('price-list-content');
 const policyDialog = document.querySelector("[appointment-policy]");
