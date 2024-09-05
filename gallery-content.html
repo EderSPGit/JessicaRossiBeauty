@@ -7,13 +7,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
+    <script src="https://unpkg.com/swiper@11.6.0/dist/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
   </head>
 
   <body>
     <!-- Add this button to the top right corner -->
     <div class="top-right-button">
-      <button onclick="window.location.href='index.html'">x</button>
+      <!-- <button onclick="window.location.href='index.html'">x</button> -->
+      <button onclick="hideGalleryDialog();">x</button>
     </div>
 
     <swiper-container class="mySwiper">
@@ -41,7 +44,7 @@
       <div class="swiper-pagination"></div>
     </swiper-container>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       setTimeout(() => {
         const swiper = new Swiper(".mySwiper", {
@@ -54,7 +57,7 @@
           mousewheel: true,
         });
       }, 100);
-    </script>
+    </script> -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
   </body>

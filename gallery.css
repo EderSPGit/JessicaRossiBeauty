@@ -66,12 +66,28 @@ swiper-slide img {
   border-radius: 0.25rem;
   border-width: 0px;
   width: 80%;
-  background: var(--pink-theme); /* fallback for old browsers */
+  background: var(--pink-theme);
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
+  z-index: 5;
 }
 
+/* #galleryDialog {
+  position: fixed;
+  margin: auto;
+  border-radius: 0.25rem;
+  border-width: 0px;
+  width: 80%;
+  background: var(--pink-theme);
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2);
+} */
+
 #galleryDialog::backdrop {
+  background-color: hsla(0, 0%, 0%, 0.6);
+}
+
+.galleryDialog::backdrop {
   background-color: hsla(0, 0%, 0%, 0.6);
 }
 
