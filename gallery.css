@@ -35,10 +35,6 @@ swiper-slide {
   font-size: 18px;
   background: #ffffff;
 
-  /* background: var(--pink-theme);
-  background: var(--pink-gradient-platform1);
-  background: var(--pink-gradient-platform2); */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,17 +44,10 @@ swiper-slide {
 swiper-slide img {
   display: block;
   width: 95%;
-  height: auto;
+  height: 95%;
   object-fit: contain;
   margin-right: 1.5rem;
 }
-
-/* .swiper-pagination-bullet {
-  opacity: 1;
-  background-color: #000000c7;
-  width: 1.75rem;
-  height: 1.75rem;
-} */
 
 #galleryDialog {
   position: fixed;
@@ -70,29 +59,10 @@ swiper-slide img {
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
   z-index: 5;
-}
 
-/* #galleryDialog {
-  position: fixed;
-  margin: auto;
-  border-radius: 0.25rem;
-  border-width: 0px;
-  width: 80%;
-  background: var(--pink-theme);
-  background: var(--pink-gradient-platform1);
-  background: var(--pink-gradient-platform2);
-} */
-
-#galleryDialog::backdrop {
-  background-color: hsla(0, 0%, 0%, 0.6);
-}
-
-.galleryDialog::backdrop {
-  background-color: hsla(0, 0%, 0%, 0.6);
-}
-
-.swiper-backface-hidden ::slotted(swiper-slide) {
-  transform: translateZ(1);
+  inset-inline-start: 0px;
+  inset-inline-end: 0px;
+  /* height: fit-content; */
 }
 
 .top-right-button button {
@@ -103,7 +73,7 @@ swiper-slide img {
   color: rgba(71, 0, 0, 0.6);
   cursor: pointer;
   position: absolute;
-  top: 1rem;
-  right: 2rem;
+  top: 1vh;
+  right: 2vw;
   z-index: 2;
 }

@@ -69,68 +69,6 @@ const highlightMenu = () => {
 window.addEventListener("scroll", highlightMenu);
 window.addEventListener("click", highlightMenu);
 
-// const galleryDialog = document.querySelector("[gallery-dialog]");
-// const swiperContainer = document.getElementById("galleryDialog");
-const galleryDialog = document.getElementById("galleryDialog");
-const galleryContentDiv = galleryDialog.querySelector(".gallery-content");
-
-let galleryContentLoaded = false;
-
-function openGalleryDialog() {
-  if (!galleryContentLoaded) {
-    fetch("gallery-content.html") //load page
-      .then((response) => response.text())
-      .then((data) => {
-        galleryContentDiv.innerHTML = data; //inject page into dialog within index.html
-        galleryContentLoaded = true; // set flag to true
-      })
-      .catch((error) => console.error("Error loading gallery content:", error));
-  }
-  showDialog(galleryDialog);
-  const swiperContainer = galleryContentDiv.querySelector(".mySwiper");
-  if (swiperContainer) {
-    setSwiperAttributes(); // Initialize Swiper after content is loaded
-  }
-}
-
-function hideGalleryDialog() {
-  const galleryDialog = document.getElementById("galleryDialog");
-  hideDialog(galleryDialog);
-}
-
-// Function to show the dialog
-function showDialog(dialog) {
-  dialog.style.display = "block";
-}
-
-// Function to hide the
-function hideDialog(dialog) {
-  dialog.style.display = "none";
-}
-
-function setSwiperAttributes() {
-  // Dynamically set Swiper attributes
-  const swiperContainer = galleryContentDiv.querySelector(".mySwiper");
-
-  // Initialize Swiper instance with options
-  const swiper = new Swiper(swiperContainer, {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    direction: "vertical",
-    spaceBetween: 30,
-    mousewheel: true,
-  });
-}
-
-// class GalleryDialog extends HTMLElement {
-//   showModal() {
-//     // Add your custom implementation here
-//     this.style.display = "block";
-//   }
-// }
-
 // const priceListDialog = document.getElementById('price-list-content');
 const policyDialog = document.querySelector("[appointment-policy]");
 const priceListDialog = document.getElementById("pricelist-dialog");
@@ -139,6 +77,7 @@ function openPriceListDialog(tabId) {
   fetch("pricelist-content.html") //load page
     .then((response) => response.text())
     .then((data) => {
+      const priceListDialog = document.getElementById("pricelist-dialog");
       priceListDialog.innerHTML = data; //inject page into dialog within index.html
       //handler to show modal only if element of id provided exists
       const tabElement = document.getElementById(tabId);
@@ -171,9 +110,9 @@ function addDialogEventListener(dialog) {
 function checkDialogBounds(dialogName, dialogDimensions, e) {
   if (
     e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right
-    // e.clientY < dialogDimensions.top ||
-    // e.clientY > dialogDimensions.bottom
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
   ) {
     console.log("OUT OF BOUND, X: " + e.clientX + " Y: " + e.clientY);
     dialogName.close();

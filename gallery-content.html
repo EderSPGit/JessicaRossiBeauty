@@ -16,10 +16,18 @@
     <!-- Add this button to the top right corner -->
     <div class="top-right-button">
       <!-- <button onclick="window.location.href='index.html'">x</button> -->
-      <button onclick="hideGalleryDialog();">x</button>
+      <!-- <button onclick="hideGalleryDialog();">x</button> -->
+      <button onclick="window.location.href='index.html'">x</button>
     </div>
 
-    <swiper-container class="mySwiper">
+    <swiper-container
+      class="mySwiper"
+      pagination="true"
+      pagination-clickable="true"
+      direction="vertical"
+      space-between="30"
+      mousewheel="true"
+    >
       <swiper-slide
         ><img
           src="/assets/img/gallery/eyebrow1.jpg"
@@ -44,21 +52,6 @@
       <div class="swiper-pagination"></div>
     </swiper-container>
 
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-      setTimeout(() => {
-        const swiper = new Swiper(".mySwiper", {
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          direction: "vertical",
-          spaceBetween: 30,
-          mousewheel: true,
-        });
-      }, 100);
-    </script> -->
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </body>
 </html>
