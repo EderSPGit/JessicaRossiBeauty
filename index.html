@@ -25,14 +25,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
-
-    <!-- Swiper CSS-->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    /> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </head>
   <body>
     <!-- Navbar Section -->
@@ -136,12 +128,14 @@
         <div class="main__content">
           <h1>About</h1>
           <div class="h2-wrap">
-            <h2>
-              We are a beauty salon with over 7 years of experience, located in
-              the heart of Dublin city center. Specialized in eyebrow design,
-              eyelash perming, waxing, threading, facial and body treatments and
-              more.
-            </h2>
+            <div class="about description">
+              <p>
+                We are a beauty salon with over 7 years of experience, located
+                in the heart of Dublin city center. Specialized in eyebrow
+                design, eyelash perming, waxing, threading, facial and body
+                treatments and more.
+              </p>
+            </div>
           </div>
 
           <!-- <div id="map"></div> -->
@@ -313,7 +307,7 @@
 
           <!-- <h2>Get in Touch!</h2> -->
 
-          <div class="contact-description">
+          <div class="contact description">
             <p>
               <span>Get in Touch!</span> We're always excited to hear from you!
               If you have any questions, comments, or suggestions, please don't
@@ -441,10 +435,10 @@
 
     <script src="app.js"></script>
 
-    <!--date and time picker-->
+    <!-- flatpickr - date and time picker-->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
+    <!-- <script>
       flatpickr("input[type=datetime-local]", {});
-    </script>
+    </script> -->
   </body>
 </html>
