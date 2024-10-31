@@ -76,8 +76,18 @@ function getCurrentTabId() {
   let currentTabElement = document.querySelector(
     'input[name="mytabs"]:checked'
   );
-  return currentTabElement ? currentTabElement.id : null;
+
+  //if currentTabElement exists...
+  if (currentTabElement) {
+    return currentTabElement.id;
+  } else {
+    return null;
+  }
+  // return currentTabElement ? currentTabElement.id : null;
 }
+
+// let currentTabElement = document.querySelector('input[name="mytabs"]:checked');
+// let currentTab = currentTabElement ? currentTabElement.id : null;
 
 function updateCurrentTabId() {
   let currentTab = null;
@@ -109,25 +119,45 @@ function openPriceListDialog(tabId) {
         console.error(`Element with ID ${tabId} not found.`);
       }
 
-      //dynamically set the buttons to be able to tell which the user has clicked, giving the treatment.item_name
-      const bookButtons = document.querySelectorAll(".item_btn");
-
-      bookButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const treatmentName = getTreatmentName(button);
-          console.log("Treatment name:", treatmentName);
-
-          openCalendar();
-        });
-      });
+      setBookBtns();
+      // openCalendar();
     })
     .catch((error) =>
       console.error("Error loading price-list content:", error)
     );
 }
 
+//dynamically set the buttons to be able to tell which the user has clicked, giving the treatment.item_name
+function setBookBtns() {
+  const bookBtns = document.querySelectorAll(".item_btn");
+
+  bookBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+      const treatmentName = getTreatmentName(button);
+      console.log("Treatment name: '" + treatmentName + "'.");
+    });
+  });
+}
+
+//treatment book button *test
+function getTreatmentName(button) {
+  const treatmentDiv = button.closest(".treatment");
+  const itemNameDiv = treatmentDiv.querySelector(".item_name");
+  const itemName = itemNameDiv.textContent.trim();
+  return itemName;
+}
+
+// function setClickedTreatment(treatment) {
+//   let treatment = treatment;
+// }
+
+// function getClickedTreatment() {
+//   return;
+// }
+
 function openCalendar() {
   // Create a div to hold the flatpickr calendar with a high z-index
+
   const calendarContainer = document.createElement("div");
   // calendarContainer.style.zIndex = "99"; // Set the desired z-index here
 
@@ -170,14 +200,6 @@ function openCalendar() {
 //   currentTab = this.id; // 'this' refers to the clicked radio button
 //   console.log("Current tab:", currentTab); // For debugging
 // }
-
-//treatment book button *test
-function getTreatmentName(button) {
-  const treatmentDiv = button.closest(".treatment");
-  const itemNameDiv = treatmentDiv.querySelector(".item_name");
-  const itemName = itemNameDiv.textContent.trim();
-  return itemName;
-}
 
 // addDialogEventListener(priceListDialog);
 
