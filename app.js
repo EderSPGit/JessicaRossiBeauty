@@ -119,7 +119,7 @@ function openPriceListDialog(tabId) {
         console.error(`Element with ID ${tabId} not found.`);
       }
 
-      setBookBtns();
+      addBookBtnsEventListener();
       // openCalendar();
     })
     .catch((error) =>
@@ -128,22 +128,30 @@ function openPriceListDialog(tabId) {
 }
 
 //dynamically set the buttons to be able to tell which the user has clicked, giving the treatment.item_name
-function setBookBtns() {
+function addBookBtnsEventListener() {
   const bookBtns = document.querySelectorAll(".item_btn");
 
   bookBtns.forEach((button) => {
     button.addEventListener("click", () => {
       const treatmentName = getTreatmentName(button);
       console.log("Treatment name: '" + treatmentName + "'.");
+      // set;
     });
   });
 }
 
+let bookedClicked = null;
+
+function getLastClickedBookedBtn() {
+  return bookedClicked;
+}
 //treatment book button *test
 function getTreatmentName(button) {
   const treatmentDiv = button.closest(".treatment");
   const itemNameDiv = treatmentDiv.querySelector(".item_name");
   const itemName = itemNameDiv.textContent.trim();
+
+  bookedClicked = itemName;
   return itemName;
 }
 
