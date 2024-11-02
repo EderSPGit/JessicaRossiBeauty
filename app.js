@@ -127,6 +127,55 @@ function openPriceListDialog(tabId) {
     );
 }
 
+function openCalendar() {
+  // Get the dialog element
+  const dialog = document.getElementById("fpickr-dialog");
+  // Get the calendar container
+  const calendarContainer = document.getElementById("calendar-container");
+  // Clear any existing content in the calendar container
+  calendarContainer.innerHTML = "";
+  // Create a div to hold the flatpickr calendar
+  const fpContainer = document.createElement("div");
+  // Append the calendar container to the dialog
+  calendarContainer.appendChild(fpContainer);
+  // Initialize Flatpickr on the calendar container
+  const fp = flatpickr(fpContainer, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minDate: "today",
+    onClose: [
+      // Handle selected date and time
+      (selectedDates, dateStr, instance) => {
+        console.log("Selected Date:", selectedDates[0]);
+        console.log("Formatted Date:", dateStr);
+        // Store the selected dateStr
+        selectedDate = dateStr;
+      },
+    ],
+  });
+  // Open the Flatpickr calendar
+  fp.open();
+  // Show the dialog
+  dialog.showModal();
+}
+
+let selectedDate = "";
+// Cancel button functionality
+document.getElementById("cancel-btn").addEventListener("click", () => {
+  const dialog = document.getElementById("fpickr-dialog");
+  dialog.close();
+});
+
+// Confirm button functionality
+document.getElementById("confirm-btn").addEventListener("click", () => {
+  if (selectedDate) {
+    const whatsappURL = `https://api.whatsapp.com/send?phone=353830110511&text=I%20would%20like%20to%20book%20an%20appointment%20for%20the%20date:%20${encodeURIComponent(
+      selectedDate
+    )}`;
+    window.open(whatsappURL, "_blank");
+  }
+});
+
 //dynamically set the buttons to be able to tell which the user has clicked, giving the treatment.item_name
 function addBookBtnsEventListener() {
   const bookBtns = document.querySelectorAll(".item_btn");
@@ -135,22 +184,24 @@ function addBookBtnsEventListener() {
     button.addEventListener("click", () => {
       const treatmentName = getTreatmentName(button);
       console.log("Treatment name: '" + treatmentName + "'.");
-      // set;
+      openCalendar();
     });
   });
 }
-
+//Global var to know which item_name the user last clicked 'Book' btn
 let bookedClicked = null;
 
 function getLastClickedBookedBtn() {
   return bookedClicked;
 }
-//treatment book button *test
+
+//get item_name out of the tratment div
 function getTreatmentName(button) {
   const treatmentDiv = button.closest(".treatment");
   const itemNameDiv = treatmentDiv.querySelector(".item_name");
   const itemName = itemNameDiv.textContent.trim();
 
+  //save last 'book' btn user clicked in 'bookedClicked' global variable
   bookedClicked = itemName;
   return itemName;
 }
@@ -162,45 +213,6 @@ function getTreatmentName(button) {
 // function getClickedTreatment() {
 //   return;
 // }
-
-function openCalendar() {
-  // Create a div to hold the flatpickr calendar with a high z-index
-
-  const calendarContainer = document.createElement("div");
-  // calendarContainer.style.zIndex = "99"; // Set the desired z-index here
-
-  calendarContainer.style.position = "fixed";
-  calendarContainer.style.top = "35%";
-  calendarContainer.style.left = "35%";
-  calendarContainer.style.transform = "translate(-35%, -35%)";
-  // calendarContainer.style.zIndex = "99";
-  // Ensure styles are applied to flatpickr elements within this container
-  calendarContainer.classList.add("centered-flatpickr");
-  document.body.appendChild(calendarContainer);
-
-  const fp = flatpickr(calendarContainer, {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    minDate: "today",
-    // position: "center", // Ensures the calendar is positioned correctly
-    onClose: [
-      // Handle selected date and time
-      (selectedDates, dateStr, instance) => {
-        console.log("Selected Date:", selectedDates[0]);
-        console.log("Formatted Date:", dateStr);
-        // Replace this with your booking logic
-        alert(`You have booked Eyebrow design for ${dateStr}`);
-      },
-    ],
-  });
-
-  //close the dialog just to cover the bug that flatpickr won't open forward (z-index lower)
-  const priceListDialog = document.getElementById("pricelist-dialog");
-
-  //get which pricelist part it was so that after booking, it opens back up where it waw
-  priceListDialog.close();
-  fp.open();
-}
 
 // // Function to update the currentTab variable when a tab is clicked
 // function updateCurrentTab() {
