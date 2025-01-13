@@ -130,16 +130,14 @@ function openPriceListDialog(tabId) {
 function openCalendar() {
   // Get the dialog element
   const dialog = document.getElementById("fpickr-dialog");
+  // Show the dialog
+  dialog.showModal();
+
   // Get the calendar container
-  const calendarContainer = document.getElementById("calendar-container");
-  // Clear any existing content in the calendar container
-  calendarContainer.innerHTML = "";
-  // Create a div to hold the flatpickr calendar
-  const fpContainer = document.createElement("div");
-  // Append the calendar container to the dialog
-  calendarContainer.appendChild(fpContainer);
-  // Initialize Flatpickr on the calendar container
-  const fp = flatpickr(fpContainer, {
+  // const calendarContainer = document.querySelector(".fpickr-calendar");
+  const calendarBox = document.querySelector(".fpickr-box");
+
+  const fp = flatpickr(dialog, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today",
@@ -153,11 +151,44 @@ function openCalendar() {
       },
     ],
   });
-  // Open the Flatpickr calendar
+
   fp.open();
-  // Show the dialog
-  dialog.showModal();
 }
+
+// // Step 1: Fetch events from Google Calendar
+// async function fetchGoogleCalendarEvents() {
+//   const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
+//     headers: {
+//       'Authorization': Bearer ${accessToken} // Use the OAuth 2.0 access token
+//     }
+//   });
+//   const data = await response.json();
+//   return data.items;
+// }
+
+// // Step 2: Parse events to get unavailable times
+// function getUnavailableTimes(events) {
+//   return events.map(event => {
+//     return {
+//       from: new Date(event.start.dateTime),
+//       to: new Date(event.end.dateTime)
+//     };
+//   });
+// }
+
+// // Step 3: Initialize Flatpickr with unavailable times
+// async function initializeFlatpickr() {
+//   const events = await fetchGoogleCalendarEvents();
+//   const unavailableTimes = getUnavailableTimes(events);
+
+//   flatpickr("#calendar", {
+//     enableTime: true,
+//     disable: unavailableTimes
+//   });
+// }
+
+// // Call the function to initialize Flatpickr
+// initializeFlatpickr();
 
 let selectedDate = "";
 // Cancel button functionality
@@ -205,23 +236,6 @@ function getTreatmentName(button) {
   bookedClicked = itemName;
   return itemName;
 }
-
-// function setClickedTreatment(treatment) {
-//   let treatment = treatment;
-// }
-
-// function getClickedTreatment() {
-//   return;
-// }
-
-// // Function to update the currentTab variable when a tab is clicked
-// function updateCurrentTab() {
-//   let currentTab = document.querySelector('input[name="mytabs"]:checked').id;
-//   currentTab = this.id; // 'this' refers to the clicked radio button
-//   console.log("Current tab:", currentTab); // For debugging
-// }
-
-// addDialogEventListener(priceListDialog);
 
 // Select all dialogs and add event listeners
 const dialogs = document.querySelectorAll("dialog");

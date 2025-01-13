@@ -636,25 +636,15 @@ body {
   background-color: hsla(0, 0%, 0%, 0.6);
 }
 
-.flatpickr-calendar {
-  z-index: 999;
-}
-/* .flatpickr-calendar {
-  z-index: 1001;
-} */
-
 .regular-btn {
   padding: 1rem 5rem;
   color: white;
+  background: var(--blackbtn);
   font-size: 1rem;
   border: 0;
   cursor: pointer;
   border-radius: 0.5rem;
   margin-bottom: 20px;
-}
-
-.modal-close-btn {
-  background: var(--blackbtn);
 }
 
 .modal-close-btn:hover {
@@ -781,6 +771,44 @@ body {
 .footer-policy-btn {
   text-align: left;
   margin-left: 5px;
+}
+
+#fpickr-dialog {
+  position: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: auto;
+  border-radius: 1rem;
+  border-width: 0px;
+  background: var(--pink-theme);
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2);
+}
+
+#fpickr-dialog::backdrop {
+  background-color: hsla(0, 0%, 0%, 0.6);
+}
+
+.fpickr-confirm {
+  background: #39b66d;
+  background: #1a73e8;
+  background: var(--dark-purple);
+}
+
+.fpickr-btn {
+  margin: 10px;
+}
+
+.fpickr-calendar {
+  background: #c575da;
+  width: auto;
+  height: 300px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--dark-purple);
+}
+
+.fpickr-btns {
+  text-align: center;
 }
 
 .policy-body {
@@ -1005,12 +1033,6 @@ body {
 }
 
 @media screen and (max-width: 820px) {
-  /* 
-  #navbar__logo {
-    margin-left: 40%;
-    margin-right: 60%;
-  } */
-
   .footer__links {
     padding-top: 2rem;
   }
@@ -1034,15 +1056,6 @@ body {
 
   .policy-body {
     display: block;
-  }
-
-  .content-2 {
-    padding-top: 20px;
-  }
-
-  .content-1 {
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--dark-purple);
   }
 }
 
@@ -1195,6 +1208,11 @@ body {
     text-align: center;
     margin-left: 0px;
   }
+
+  .fpickr-btns {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1234,5 +1252,11 @@ body {
     height: 55px;
     margin-left: 5vw;
     margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .regular-btn {
+    padding: 0.5rem 2.5rem;
   }
 }

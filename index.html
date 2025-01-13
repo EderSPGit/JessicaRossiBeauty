@@ -8,8 +8,6 @@
 
     <!-- Main CSS-->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Gallery CSS-->
-    <!-- <link rel="stylesheet" href="gallery.css" /> -->
 
     <!-- Website Icons CSS -->
     <link
@@ -76,10 +74,6 @@
       <div class="gallery-content"></div>
     </dialog> -->
 
-    <!-- <dialog id="galleryDialog">
-      <div class="gallery-content"></div>
-    </dialog> -->
-
     <!-- Hero Section -->
     <div class="hero" id="home">
       <div class="hero__container">
@@ -91,8 +85,6 @@
           <button class="main__btn" id="explore__btn">
             <a href="#services">Explore</a>
           </button>
-          <!-- onclick="location.href='gallery-content.html'" -->
-          <!-- onclick="openGalleryDialog();" -->
           <button
             class="main__btn"
             id="gallery__btn"
@@ -208,9 +200,16 @@
     </dialog>
 
     <dialog id="fpickr-dialog">
-      <div id="calendar-container"></div>
-      <button id="cancel-btn">Cancel</button>
-      <button id="confirm-btn">Confirm</button>
+      <div class="fpickr-calendar">
+        <div class="fpickr-box"></div>
+      </div>
+
+      <div class="fpickr-btns">
+        <button class="regular-btn fpickr-confirm fpickr-btn" id="confirm-btn">
+          Confirm
+        </button>
+        <button class="regular-btn fpickr-btn" id="cancel-btn">Cancel</button>
+      </div>
     </dialog>
 
     <dialog appointment-policy id="policy-dialog">
