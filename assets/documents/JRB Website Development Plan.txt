@@ -1,0 +1,28 @@
+JRB Website Plan
+
+- List of items(eye list, facial list...)
+
+- Each item has:
+--name, 
+--description, 
+--time, 
+--price,
+--button "Book"
+
+- "Book" button has to register which {'item-name'} the user clicked.
+
+
+- When "book" button is clicked, user then selects a date&time. The user then has to click "Check Availability" button and it will redirect to whatsapp api with the custom message with the {'item-name'}, {'dd/mm/yy'} & {time}.
+
+
+Hi! I come from the Jessica Rossi Beauty website and I would like to know if you have availability for {item.name} for the date {dd/mm/yy} at {time} please.
+
+
+- Make a 'Booking policy' button on pricelist page.
+- Make button "Book" calculate the 25% pay ahead policy price.
+
+
+Future:
+Add login for jessica
+ability to CRUD pricelist items.
+create pricelist section.

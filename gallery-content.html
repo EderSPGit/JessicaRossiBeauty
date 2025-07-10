@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JRB Gallery</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <script src="https://unpkg.com/swiper@11.6.0/dist/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+  </head>
+
+  <body>
+    <!-- Add this button to the top right corner -->
+    <div class="top-right-button">
+      <!-- <button onclick="window.location.href='index.html'">x</button> -->
+      <!-- <button onclick="hideGalleryDialog();">x</button> -->
+      <button onclick="window.location.href='index.html'">&times;</button>
+    </div>
+
+    <swiper-container
+      class="mySwiper"
+      pagination="true"
+      pagination-clickable="true"
+      direction="vertical"
+      space-between="30"
+      mousewheel="true"
+    >
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/eyebrow1.jpg"
+          alt="Eyebrow Design Slide 1"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/eyebrow2.jpg"
+          alt="Eyebrow Design Slide 2"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/eyebrow3.jpg"
+          alt="Eyebrow Design Slide 3"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/eyebrow5.jpg"
+          alt="Eyebrow Design Slide 5"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/eyebrow6.jpg"
+          alt="Eyebrow Design Slide 6"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/modelling-massage1.jpg"
+          alt="Modellin Massage Slide 1"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/modelling-massage2.jpg"
+          alt="Modellin Massage Slide 2"
+      /></swiper-slide>
+      <swiper-slide
+        ><img
+          src="/assets/img/gallery/modelling-massage3.jpg"
+          alt="Modellin Massage Slide 3"
+      /></swiper-slide>
+
+      <div class="swiper-pagination"></div>
+    </swiper-container>
+
+    <!-- Swiper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  </body>
+</html>

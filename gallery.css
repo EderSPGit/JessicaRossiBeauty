@@ -1,0 +1,79 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  --pink-gradient-platform1: -webkit-linear-gradient(
+    to right,
+    #fbcfd4,
+    #f2abb4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  --pink-gradient-platform2: linear-gradient(
+    to right,
+    #fbcfd4,
+    #f2abb4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--pink-theme); /* fallback for old browsers */
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
+  margin-right: 1.5rem;
+}
+
+#galleryDialog {
+  position: fixed;
+  margin: auto;
+  border-radius: 0.25rem;
+  border-width: 0px;
+  width: 80%;
+  background: var(--pink-theme);
+  background: var(--pink-gradient-platform1);
+  background: var(--pink-gradient-platform2);
+  z-index: 5;
+
+  inset-inline-start: 0px;
+  inset-inline-end: 0px;
+  /* height: fit-content; */
+}
+
+.top-right-button button {
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(71, 0, 0, 0.6);
+  cursor: pointer;
+  position: absolute;
+  top: 1vh;
+  right: 2vw;
+  z-index: 2;
+}
