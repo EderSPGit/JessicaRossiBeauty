@@ -393,6 +393,15 @@ body {
   justify-content: center;
 }
 
+.main__img--card img{
+  height: 100%;
+  width: auto;
+  border-radius: 15px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
 .fa-layer-group,
 .fa-users {
   font-size: 14rem;
