@@ -127,6 +127,11 @@ function openPriceListDialog(tabId) {
     );
 }
 
+function closePriceListDialog(){
+  const priceListDialog = document.getElementById("pricelist-dialog");
+  priceListDialog.close();
+}
+
 function openCalendar() {
   // Get the dialog element
   const dialog = document.getElementById("fpickr-dialog");
