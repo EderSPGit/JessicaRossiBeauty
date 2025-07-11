@@ -305,9 +305,8 @@ body {
 }
 
 .description p {
-  /* padding: 20px; */
   font-weight: 500;
-  font-size: 2.5vh;
+  /* font-size: 2.5vh; */
 }
 
 .about p {
@@ -863,6 +862,10 @@ body {
 .contact-btns {
   padding: 20px 45px;
   white-space: nowrap;
+}
+
+.about description p {
+  font-size: 2rem;
 }
 
 /*__________Mobile Responsiveness__________*/
