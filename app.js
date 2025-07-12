@@ -1,5 +1,3 @@
-// import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js";
-
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
 const navLogo = document.querySelector("#navbar__logo");
@@ -32,7 +30,7 @@ const highlightMenu = () => {
   const servicesNav = document.querySelector("#services-navbar");
   const contactNav = document.querySelector("#contact-navbar");
   let scrollPos = window.scrollY;
-  console.log(scrollPos);
+  // console.log(scrollPos);
 
   // adds 'highlight' class to my menu items
   if (window.innerWidth > 960 && scrollPos < 600) {
@@ -69,10 +67,7 @@ const highlightMenu = () => {
 window.addEventListener("scroll", highlightMenu);
 window.addEventListener("click", highlightMenu);
 
-// const priceListDialog = document.getElementById("price-list-content");
-const policyDialog = document.querySelector("[appointment-policy]");
-
-function getCurrentTabId() {
+function getCurrentPriceListTabId() {
   let currentTabElement = document.querySelector(
     'input[name="mytabs"]:checked'
   );
@@ -83,11 +78,7 @@ function getCurrentTabId() {
   } else {
     return null;
   }
-  // return currentTabElement ? currentTabElement.id : null;
 }
-
-// let currentTabElement = document.querySelector('input[name="mytabs"]:checked');
-// let currentTab = currentTabElement ? currentTabElement.id : null;
 
 function updateCurrentTabId() {
   let currentTab = null;
@@ -95,41 +86,10 @@ function updateCurrentTabId() {
   const radioButtons = document.querySelectorAll('input[name="mytabs"]');
   radioButtons.forEach((radioButton) => {
     radioButton.addEventListener("change", (event) => {
-      currentTab = getCurrentTabId();
-      console.log("Current Tab updated to: " + currentTab);
+      currentTab = getCurrentPriceListTabId();
+      // console.log("Current Tab updated to: " + currentTab);
     });
   });
-}
-
-function openPriceListDialog(tabId) {
-  console.log("Tab ID: " + tabId); //print the page name user clicked
-
-  fetch("pricelist-content.html") //load page
-    .then((response) => response.text())
-    .then((data) => {
-      const priceListDialog = document.getElementById("pricelist-dialog");
-      priceListDialog.innerHTML = data; //inject page into dialog within index.html
-      //handler to show modal only if element of id provided exists
-      const tabElement = document.getElementById(tabId);
-      if (tabElement) {
-        priceListDialog.showModal(tabElement.click());
-        updateCurrentTabId();
-        // console.log("Current Tab: " + currentTab); //testing
-      } else {
-        console.error(`Element with ID ${tabId} not found.`);
-      }
-
-      addBookBtnsEventListener();
-      // openCalendar();
-    })
-    .catch((error) =>
-      console.error("Error loading price-list content:", error)
-    );
-}
-
-function closePriceListDialog(){
-  const priceListDialog = document.getElementById("pricelist-dialog");
-  priceListDialog.close();
 }
 
 function openCalendar() {
@@ -212,6 +172,32 @@ document.getElementById("confirm-btn").addEventListener("click", () => {
   }
 });
 
+function openPriceListDialog(tabId) {
+  // console.log("Tab ID: " + tabId); //print the page name user clicked
+
+  fetch("pricelist-content.html") //load page
+    .then((response) => response.text())
+    .then((data) => {
+      const priceListDialog = document.getElementById("pricelist-dialog");
+      priceListDialog.innerHTML = data; //inject page into dialog within index.html
+      //handler to show modal only if element of id provided exists
+      const tabElement = document.getElementById(tabId);
+      if (tabElement) {
+        priceListDialog.showModal(tabElement.click());
+        updateCurrentTabId();
+        // console.log("Current Tab: " + currentTab); //testing
+      } else {
+        console.error(`Element with ID ${tabId} not found.`);
+      }
+
+      addBookBtnsEventListener();
+      // openCalendar();
+    })
+    .catch((error) =>
+      console.error("Error loading price-list content:", error)
+    );
+}
+
 //dynamically set the buttons to be able to tell which the user has clicked, giving the treatment.item_name
 function addBookBtnsEventListener() {
   const bookBtns = document.querySelectorAll(".item_btn");
@@ -269,6 +255,7 @@ function checkDialogBounds(dialog, dialogDimensions, e) {
   }
 }
 
+//get treatment name when user clicks it's book button, make this function but using select button instead of 1 book button for each treatment item
 // Example usage:
 // const bookButtons = document.querySelectorAll(".item_btn");
 

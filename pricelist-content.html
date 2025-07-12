@@ -446,11 +446,11 @@
   <div class="pricelist-footer">
 
     <div class="pricelist-footer-item footer-close-btn">
-      <button class="regular-btn modal-close-btn" onclick="closePriceListDialog();">Close</button>
+       <button class="regular-btn modal-close-btn" onclick="document.getElementById('pricelist-dialog').close()">Close</button>
     </div>
 
     <div class="pricelist-footer-item footer-policy-btn">
-      <button class="regular-btn appointment-policy-btn" onclick="policyDialog.showModal();"">Appointment Policy</button>
+      <button class="regular-btn appointment-policy-btn" onclick="document.querySelector('[appointment-policy]').showModal();">Appointment Policy</button>
     </div>
 
     <div></div>
