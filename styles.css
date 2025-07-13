@@ -168,7 +168,7 @@ body {
   background: var(--pink-theme); /* fallback for old browsers */
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
-  padding: 200px 0;
+  padding: 100px 0;
 }
 
 .hero__container {
@@ -222,7 +222,7 @@ body {
 /* About Section */
 .main {
   background-color: #ffffff;
-  padding: 10rem 0;
+  padding: 3rem 0;
 }
 
 .main__container {
@@ -414,7 +414,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 10rem 0;
+  padding: 3rem 0;
 }
 
 .services h1 {
