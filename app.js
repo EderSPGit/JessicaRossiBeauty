@@ -1,5 +1,3 @@
-// import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js";
-
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
 const navLogo = document.querySelector("#navbar__logo");
@@ -32,7 +30,7 @@ const highlightMenu = () => {
   const servicesNav = document.querySelector("#services-navbar");
   const contactNav = document.querySelector("#contact-navbar");
   let scrollPos = window.scrollY;
-  console.log(scrollPos);
+  // console.log(scrollPos);
 
   // adds 'highlight' class to my menu items
   if (window.innerWidth > 960 && scrollPos < 600) {
@@ -69,10 +67,9 @@ const highlightMenu = () => {
 window.addEventListener("scroll", highlightMenu);
 window.addEventListener("click", highlightMenu);
 
-// const priceListDialog = document.getElementById("price-list-content");
-const policyDialog = document.querySelector("[appointment-policy]");
+// Pricelist Tab Function and Logic -------------------------------------------
 
-function getCurrentTabId() {
+function getCurrentPriceListTabId() {
   let currentTabElement = document.querySelector(
     'input[name="mytabs"]:checked'
   );
@@ -83,11 +80,7 @@ function getCurrentTabId() {
   } else {
     return null;
   }
-  // return currentTabElement ? currentTabElement.id : null;
 }
-
-// let currentTabElement = document.querySelector('input[name="mytabs"]:checked');
-// let currentTab = currentTabElement ? currentTabElement.id : null;
 
 function updateCurrentTabId() {
   let currentTab = null;
@@ -95,66 +88,179 @@ function updateCurrentTabId() {
   const radioButtons = document.querySelectorAll('input[name="mytabs"]');
   radioButtons.forEach((radioButton) => {
     radioButton.addEventListener("change", (event) => {
-      currentTab = getCurrentTabId();
-      console.log("Current Tab updated to: " + currentTab);
+      currentTab = getCurrentPriceListTabId();
+      // console.log("Current Tab updated to: " + currentTab);
     });
   });
 }
 
-function openPriceListDialog(tabId) {
-  console.log("Tab ID: " + tabId); //print the page name user clicked
+//-----------------------------------------------------------------
+//---------------------- Pricelist Functions ----------------------
 
-  fetch("pricelist-content.html") //load page
+let selectedTreatments = [];
+
+function addSelectBtnsEventListener() {
+  const selectBtns = document.querySelectorAll(".select-btn");
+
+  selectBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const name = btn.getAttribute("data-name");
+
+      if (selectedTreatments.includes(name)) {
+        // Unselect
+        selectedTreatments = selectedTreatments.filter(item => item !== name);
+        btn.classList.remove("selected");
+        btn.textContent = "Select";
+      } else {
+        // Select
+        selectedTreatments.push(name);
+        btn.classList.add("selected");
+        btn.textContent = "Selected";
+      }
+
+      console.log("Selected Treatments:", selectedTreatments);
+    });
+  });
+}
+
+function assignDataNames() {
+  document.querySelectorAll('.treatment').forEach(treatment => {
+    const itemName = treatment.querySelector('.item_name')?.innerText?.trim();
+    const btn = treatment.querySelector('.select-btn');
+
+    if (itemName && btn) {
+      btn.setAttribute('data-name', itemName);
+    }
+  });
+}
+
+function openPriceListDialog(tabId) {
+  fetch("pricelist-content.html")
     .then((response) => response.text())
     .then((data) => {
       const priceListDialog = document.getElementById("pricelist-dialog");
-      priceListDialog.innerHTML = data; //inject page into dialog within index.html
-      //handler to show modal only if element of id provided exists
+      priceListDialog.innerHTML = data;
+
       const tabElement = document.getElementById(tabId);
       if (tabElement) {
         priceListDialog.showModal(tabElement.click());
         updateCurrentTabId();
-        // console.log("Current Tab: " + currentTab); //testing
       } else {
         console.error(`Element with ID ${tabId} not found.`);
       }
 
-      addBookBtnsEventListener();
-      // openCalendar();
+      assignDataNames();
+      addSelectBtnsEventListener();
+
+      // Book button listener
+      const bookBtn = document.getElementById("book-btn");
+      if (bookBtn) {
+        bookBtn.addEventListener("click", () => {
+          if (selectedTreatments.length === 0) {
+            alert("Please select at least one treatment.");
+            return;
+          }
+          openCalendar();
+        });
+      }
     })
     .catch((error) =>
       console.error("Error loading price-list content:", error)
     );
 }
 
+//FLATPICKR LOGIC -------------------------------------------------
+
 function openCalendar() {
-  // Get the dialog element
   const dialog = document.getElementById("fpickr-dialog");
-  // Show the dialog
   dialog.showModal();
 
-  // Get the calendar container
-  // const calendarContainer = document.querySelector(".fpickr-calendar");
   const calendarBox = document.querySelector(".fpickr-box");
+  calendarBox.innerHTML = '<input id="fp-input" type="text" placeholder="Select date and time" />';
 
-  const fp = flatpickr(dialog, {
+
+  // Wait for DOM to update before attaching Flatpickr
+  setTimeout(() => {
+    const fpInput = document.getElementById("fp-input");
+
+    flatpickr(fpInput, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today",
-    onClose: [
-      // Handle selected date and time
-      (selectedDates, dateStr, instance) => {
-        console.log("Selected Date:", selectedDates[0]);
-        console.log("Formatted Date:", dateStr);
-        // Store the selected dateStr
-        selectedDate = dateStr;
-      },
-    ],
-  });
-
-  fp.open();
+    appendTo: calendarBox,
+    onClose: (selectedDates, dateStr) => {
+      selectedDate = dateStr;
+    },
+    }).open();
+  }, 0);
 }
 
+
+document.getElementById("confirm-btn").addEventListener("click", () => {
+  if (!selectedDate || selectedTreatments.length === 0) {
+    alert("Please select treatments and a date.");
+    return;
+  }
+
+  const phone = "353830110511";
+  const services = selectedTreatments.map(item => `✔️ ${item}`).join("\n");
+  const formattedDate = formatDate(selectedDate);
+  const message = `Hi Jessica! I'd like to book the following services:\n\n${services}\n\nPreferred Date & Time:\n${formattedDate}`;
+  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+
+  // Reset
+  selectedTreatments = [];
+  selectedDate = null;
+});
+
+document.getElementById("cancel-btn").addEventListener("click", () => {
+  const dialog = document.getElementById("fpickr-dialog");
+  dialog.close();
+});
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+
+  return `${day}/${month}/${year} at ${hours}:${minutes}`;
+}
+
+//DIALOG LOGIC ----------------------------------------------------
+
+// Select all dialogs and add event listeners
+const dialogs = document.querySelectorAll("dialog");
+dialogs.forEach((dialog) => addDialogEventListener(dialog));
+
+// Reusable listener for all dialogs
+function addDialogEventListener(dialog) {
+  dialog.addEventListener("click", (e) => {
+    const dialogDimensions = dialog.getBoundingClientRect();
+    checkDialogBounds(dialog, dialogDimensions, e);
+  });
+}
+
+//reusable function to open/close dialog
+function checkDialogBounds(dialog, dialogDimensions, e) {
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    console.log("OUT OF BOUND, X: " + e.clientX + " Y: " + e.clientY);
+    dialog.close();
+  } else {
+    console.log("X: " + e.clientX + " Y: " + e.clientY);
+  }
+}
+
+// Future update
 // // Step 1: Fetch events from Google Calendar
 // async function fetchGoogleCalendarEvents() {
 //   const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
@@ -189,87 +295,3 @@ function openCalendar() {
 
 // // Call the function to initialize Flatpickr
 // initializeFlatpickr();
-
-let selectedDate = "";
-// Cancel button functionality
-document.getElementById("cancel-btn").addEventListener("click", () => {
-  const dialog = document.getElementById("fpickr-dialog");
-  dialog.close();
-});
-
-// Confirm button functionality
-document.getElementById("confirm-btn").addEventListener("click", () => {
-  if (selectedDate) {
-    const whatsappURL = `https://api.whatsapp.com/send?phone=353830110511&text=I%20would%20like%20to%20book%20an%20appointment%20for%20the%20date:%20${encodeURIComponent(
-      selectedDate
-    )}`;
-    window.open(whatsappURL, "_blank");
-  }
-});
-
-//dynamically set the buttons to be able to tell which the user has clicked, giving the treatment.item_name
-function addBookBtnsEventListener() {
-  const bookBtns = document.querySelectorAll(".item_btn");
-
-  bookBtns.forEach((button) => {
-    button.addEventListener("click", () => {
-      const treatmentName = getTreatmentName(button);
-      console.log("Treatment name: '" + treatmentName + "'.");
-      openCalendar();
-    });
-  });
-}
-//Global var to know which item_name the user last clicked 'Book' btn
-let bookedClicked = null;
-
-function getLastClickedBookedBtn() {
-  return bookedClicked;
-}
-
-//get item_name out of the tratment div
-function getTreatmentName(button) {
-  const treatmentDiv = button.closest(".treatment");
-  const itemNameDiv = treatmentDiv.querySelector(".item_name");
-  const itemName = itemNameDiv.textContent.trim();
-
-  //save last 'book' btn user clicked in 'bookedClicked' global variable
-  bookedClicked = itemName;
-  return itemName;
-}
-
-// Select all dialogs and add event listeners
-const dialogs = document.querySelectorAll("dialog");
-dialogs.forEach((dialog) => addDialogEventListener(dialog));
-
-// Reusable listener for all dialogs
-function addDialogEventListener(dialog) {
-  dialog.addEventListener("click", (e) => {
-    const dialogDimensions = dialog.getBoundingClientRect();
-    checkDialogBounds(dialog, dialogDimensions, e);
-  });
-}
-
-//reusable function to open/close dialog
-function checkDialogBounds(dialog, dialogDimensions, e) {
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    console.log("OUT OF BOUND, X: " + e.clientX + " Y: " + e.clientY);
-    dialog.close();
-  } else {
-    console.log("X: " + e.clientX + " Y: " + e.clientY);
-  }
-}
-
-// Example usage:
-// const bookButtons = document.querySelectorAll(".item_btn");
-
-// bookButtons.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     const treatmentName = getTreatmentName(button);
-//     console.log("Treatment name:", treatmentName);
-//   });
-// });

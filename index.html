@@ -113,8 +113,9 @@
     <div class="main" id="about">
       <div class="main__container">
         <div class="main__img--container">
-          <div class="main__img--card" id="card-1">
-            <i class="fas fa-users"></i>
+          <div class="main__img--card" id="card-1" class="profile-image">
+            <!-- <i class="fas fa-users"></i> -->
+            <img src="/assets/img/jessica-profile.jpg" alt="Jessica Rossi" />
           </div>
         </div>
         <div class="main__content">
@@ -122,10 +123,12 @@
           <div class="h2-wrap">
             <div class="about description">
               <p>
-                We are a beauty salon with over 7 years of experience, located
-                in the heart of Dublin city center. Specialized in eyebrow
-                design, eyelash perming, waxing, threading, facial and body
-                treatments and more.
+                Welcome to Jessica Rossi Beauty! A trusted name in beauty for over nine years. 
+                Conveniently located in the lively Temple Bar area, right in the heart of Dublin 
+                city center, we specialize in a comprehensive range of services. Whether you're 
+                seeking flawless eyebrow design, captivating eyelash perms, smooth waxing and 
+                threading, or indulgent facial and body treatments, our beauty clinic is here 
+                to provide you with a personalized and relaxing experience.
               </p>
             </div>
           </div>
@@ -199,19 +202,6 @@
       <!-- content is coming from pricelist-content.html through js script function 'openPriceListDialog' -->
     </dialog>
 
-    <dialog id="fpickr-dialog">
-      <div class="fpickr-calendar">
-        <div class="fpickr-box"></div>
-      </div>
-
-      <div class="fpickr-btns">
-        <button class="regular-btn fpickr-confirm fpickr-btn" id="confirm-btn">
-          Confirm
-        </button>
-        <button class="regular-btn fpickr-btn" id="cancel-btn">Cancel</button>
-      </div>
-    </dialog>
-
     <dialog appointment-policy id="policy-dialog">
       <div class="policy-body">
         <div class="policy-content content-1">
@@ -279,7 +269,7 @@
       <div class="dialog-footer-item">
         <button
           class="regular-btn modal-close-btn policy-close-btn"
-          onclick="policyDialog.close();"
+          onclick="document.querySelector('[appointment-policy]').close();"
         >
           Close
         </button>
@@ -314,14 +304,13 @@
 
           <div class="contact description">
             <p>
-              <span>Get in Touch!</span> We're always excited to hear from you!
-              If you have any questions, comments, or suggestions, please don't
-              hesitate to reach out. We are ready and waiting to assist you.
-              Whether you need more information about our services or want to
-              share your feedback or concerns, we're just a message away.<br />
-              <br />Click on the WhatsApp icon to start a chat with us
-              instantly. If you prefer Instagram, visit our profile and send us
-              a direct message.<br />
+              <span>Get in Touch!</span> We're always excited to hear from you! 
+              Have a question about our services, feedback, or just want to say hello? 
+              Don't hesitate to reach out, we're ready to assist you.
+              <br /><br />
+              <span>Connect with us instantly:</span> Click the <span>WhatsApp icon</span> 
+              below to start a chat, or send us a direct message on <span>Instagram</span>.
+              <br />
             </p>
             <p>We look forward to connecting with you!</p>
           </div>
@@ -380,7 +369,7 @@
         <div class="footer__link--wrapper">
           <div class="footer__link--items">
             <h2>Portfolio</h2>
-            <a href="/">See Gallery</a>
+            <a href="gallery-content.html">See Gallery</a>
             <!-- <a href="/">Ambassadors</a>
             <a href="/">Agency</a> -->
           </div>
@@ -408,7 +397,7 @@
             <!-- <a href="/" id="footer__logo">JRB</a> -->
           </div>
           <p class="website__rights">
-            © Jessica Rossi Beauty 2024. All rights reserved.
+            © Jessica Rossi Beauty 2025. All rights reserved.
           </p>
           <div class="social__icons">
             <a
@@ -422,28 +411,30 @@
               class="social__icon--link"
               ><i class="fab fa-instagram"></i
             ></a>
-            <!-- <a href="/" class="social__icon--link"
-              ><i class="fab fa-youtube"></i
-            ></a> -->
             <a
               href="https://www.linkedin.com/in/j%C3%A9ssica-rossi-8627b712a/?trk=pub-pbmap&originalSubdomain=ie"
               class="social__icon--link"
               ><i class="fab fa-linkedin"></i
             ></a>
-            <!-- <a href="/" class="social__icon--link"
-              ><i class="fab fa-twitter"></i
-            ></a> -->
           </div>
         </div>
       </section>
     </div>
 
+    <dialog id="fpickr-dialog">
+      <div class="fpickr-calendar-wrapper">
+      <div class="fpickr-box"></div>
+      </div>
+
+      <div class="fpickr-btns">
+        <button class="regular-btn fpickr-confirm fpickr-btn" id="confirm-btn">Confirm</button>
+        <button class="regular-btn fpickr-btn" id="cancel-btn">Cancel</button>
+      </div>
+    </dialog>
+
     <script src="app.js"></script>
 
     <!-- flatpickr - date and time picker-->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <!-- <script>
-      flatpickr("input[type=datetime-local]", {});
-    </script> -->
   </body>
 </html>
