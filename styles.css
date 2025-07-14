@@ -164,11 +164,25 @@ body {
 }
 
 /* Hero Section */
-.hero {
-  background: var(--pink-theme); /* fallback for old browsers */
+/* .hero {
+  background: var(--pink-theme);
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
   padding: 100px 0;
+} */
+
+.hero {
+  background-image: url("assets/img/massage-table-R70-G0B70A50.jpg"); /* 👈 Replace with your actual image path */
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll; /* Optional: use 'fixed' for parallax effect */
+  /* padding: 70px 0; */
+  min-height: 70vw; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero__container {
@@ -186,14 +200,14 @@ body {
 .hero__heading {
   font-size: 100px;
   margin-bottom: 24px;
-  color: #fff;
+  color: #ffffffe0;
   text-transform: initial;
 }
 
 .hero__heading span {
   background: var(--pink); /* fallback for old browsers */
   background: var(--purple-grad-platform1);
-  background: var(--purple-grad-platform2);
+  background: linear-gradient(to bottom, #ffffff, #ff00bfe0);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -203,7 +217,7 @@ body {
 
 .hero__description {
   font-size: 40px;
-  background: #000000; /* fallback for old browsers */
+  background: #ffdafa;
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -260,8 +274,7 @@ body {
 
 .main__content h1 {
   font-size: 3rem;
-  background-color: #fe3b6f;
-  background: var(--purple-grad-platform1);
+  background-color: #78005f;
   background: var(--purple-grad-platform2);
   /* background-size: 100%; */
   -webkit-background-clip: text;
@@ -269,7 +282,7 @@ body {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   /* margin-bottom: 10px; */
-  font-weight: 900;
+  /* font-weight: 700; */
 }
 
 .main__content h2 {
@@ -343,12 +356,12 @@ body {
 #gallery__btn {
   /* margin-left: 10px; */
   background: #333333;
-  background: -webkit-linear-gradient(to bottom, #333333, #000000);
-  background: linear-gradient(to bottom, #333333, #000000);
+  /* background: -webkit-linear-gradient(to bottom, #333333, #000000); */
+  background: linear-gradient(to bottom, #ffffff, #c9c9c9);
 }
 
 #gallery__btn:hover {
-  background: #000000;
+  background: #c2c2c2;
 }
 
 #whatsapp__btn {
@@ -384,6 +397,7 @@ body {
   height: 100%;
   width: auto;
   border-radius: 15px;
+  box-shadow: 5px 10px 20px rgba(56, 0, 0, 0.4);
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: center; */
@@ -402,6 +416,9 @@ body {
   background: #ff512f;
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
+  background-image: url("assets/img/contact-us1.jpg");
+  background-size: cover;
+  box-shadow: 5px 10px 20px rgba(56, 0, 0, 0.4);
 }
 
 /*__________Services Section__________*/
@@ -418,12 +435,11 @@ body {
 }
 
 .services h1 {
-  background: var(--pink); /* fallback for old browsers */
-  background: var(--purple-grad-platform1);
+  background: #78005f; /* fallback for old browsers */
   background: var(--purple-grad-platform2);
   background-size: 100%;
   font-size: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -447,6 +463,9 @@ body {
   color: #fff;
   background-image: linear-gradient(-225deg, #ffffff, #ff00ff, #000000);
   transition: 0.3s ease-in;
+  background-image: url("assets/img/services-eye.jpg");
+  background-size: cover;
+  box-shadow: 5px 10px 20px rgba(56, 0, 0, 0.4);
 }
 
 .services-card:nth-child(2) {
@@ -461,10 +480,21 @@ body {
     #700056,
     #ff00ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-image: url("assets/img/services-facial.jpg");
+  background-size: cover;
 }
 
 .services-card:nth-child(3) {
   background-image: linear-gradient(-225deg, #ff00ff, #7b0062, #000000);
+  background-image: url("assets/img/services-massage.jpg");
+  background-size: cover;
+}
+
+.services-card:nth-child(4) {
+  background-image: url("assets/img/services-waxing.jpg");
+  background-size: cover;
+
 }
 
 .services-card h2 {
@@ -473,18 +503,18 @@ body {
 
 .services-card p {
   text-align: center;
-  margin-top: 24px;
+  margin-top: 5px;
   font-size: 18px;
 }
 
 .services-btn {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .services-card button:hover {
-  background-color: var(--blackbtn-hover);
+  background-color: #5500349a;
 }
 
 .services-card button {
@@ -493,7 +523,7 @@ body {
   border: none;
   outline: none;
   border-radius: 4px;
-  background: var(--blackbtn);
+  background: #6e0046ad;
   font-size: 1rem;
 }
 
@@ -939,7 +969,7 @@ body {
   }
 
   .main__content h1 {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .main__content h2 {
@@ -1266,10 +1296,6 @@ body {
   }
   .fa-comments {
     font-size: 6rem;
-  }
-
-  .main__content h1 {
-    margin-top: 3rem;
   }
 
   .main__content h2 {
