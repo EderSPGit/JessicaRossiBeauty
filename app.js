@@ -188,6 +188,7 @@ function openCalendar() {
     dateFormat: "Y-m-d H:i",
     minDate: "today",
     appendTo: calendarBox,
+    disableMobile: true,
     onClose: (selectedDates, dateStr) => {
       selectedDate = dateStr;
     },
