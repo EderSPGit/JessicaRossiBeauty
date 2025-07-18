@@ -1,282 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jessica Rossi Beauty</title>
-    <link rel="shortcut icon" type="x-icon" href="assets/img/jr-favicon3.png" />
 
-    <!-- Main CSS-->
-    <link rel="stylesheet" href="styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jessica Rossi Beauty</title>
+  <link rel="shortcut icon" type="x-icon" href="assets/img/jr-favicon3.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 
-    <!-- Website Icons CSS -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
-      crossorigin="anonymous"
-    />
-    <!--date and time picker-->
 
-    <!-- Flat Pickr MAP CSS-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-  </head>
-  <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="navbar__container">
-        <a href="#home"
-          ><img
-            src="assets/img/JR Logo v2-w2.png"
-            id="navbar__logo"
-            alt="JRB Logo-large"
-        /></a>
+  <!-- Main CSS-->
+  <link rel="stylesheet" href="styles.css" />
 
-        <div class="navbar__toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+  <!-- Website Icons CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+  <!--date and time picker-->
 
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <a href="#home" class="navbar__links" id="home-navbar">Home</a>
-          </li>
-          <li class="navbar__item">
-            <a href="#about" class="navbar__links" id="about-navbar">About</a>
-          </li>
-          <li class="navbar__item">
-            <a href="#services" class="navbar__links" id="services-navbar"
-              >Services</a
-            >
-          </li>
-          <li class="navbar__item">
-            <a href="#contact" class="navbar__links" id="contact-navbar"
-              >Contact Us</a
-            >
-          </li>
-          <li>
-            <a
-              class="button appointment__btn"
-              href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments."
-              >Appointment</a
-            >
-          </li>
-        </ul>
+  <!-- Flat Pickr MAP CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="#home"><img src="assets/img/JR Logo v2-w2.png" id="navbar__logo" alt="JRB Logo-large" /></a>
+
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-      <div class="navbar__container-bottom-string"></div>
-    </nav>
 
-    <!-- <dialog class="galleryDialog" id="galleryDialog">
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="#home" class="navbar__links" id="home-navbar">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#about" class="navbar__links" id="about-navbar">About</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#services" class="navbar__links" id="services-navbar">Services</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#contact" class="navbar__links" id="contact-navbar">Contact</a>
+        </li>
+        <li class="navbar__item">
+          <a class="button appointment__btn"
+            href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments.">Appointment</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar__container-bottom-string"></div>
+  </nav>
+
+  <!-- <dialog class="galleryDialog" id="galleryDialog">
       <div class="gallery-content"></div>
     </dialog> -->
 
-    <!-- Hero Section -->
-    <div class="hero" id="home">
-      <div class="hero__container">
-        <!-- <img src="img/cosmetics beauty background 1276x704 png.png" id="cosmeticsbg" alt="cosmetics bg"> -->
-        <h1 class="hero__heading">Be your <span>best</span> version</h1>
-        <p class="hero__description">Check out our beauty treatments!</p>
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <div class="hero__container">
+      <!-- <img src="img/cosmetics beauty background 1276x704 png.png" id="cosmeticsbg" alt="cosmetics bg"> -->
+      <h1 class="hero__heading">Be your <span>best</span> version</h1>
+      <p class="hero__description">Check out our beauty treatments!</p>
 
-        <div class="hero__container__buttons">
-          <button class="main__btn" id="explore__btn">
-            <a href="#services">Explore</a>
-          </button>
-          <button
-            class="main__btn"
-            id="gallery__btn"
-            onclick="location.href='gallery-content.html'"
-            style="color: #000000"
-          >
-            <i
-              class="fas fa-camera"
-              style="
+      <div class="hero__container__buttons">
+        <button class="main__btn service-btn" onclick="location.href='#services'">
+          Explore
+        </button>
+        <button class="main__btn" id="gallery__btn" onclick="location.href='gallery-content.html'"
+          style="color: #000000">
+          <i class="fas fa-camera" style="
                 font-size: 80%;
                 padding-right: 10px;
                 position: relative;
                 z-index: 2;
                 color: #000000;
                 text-decoration: none;
-              "
-            ></i
-            >Gallery
+              "></i>Gallery
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="main" id="about">
+    <div class="main__container">
+      <div class="main__img--container">
+        <div class="main__img--card" id="card-1" class="profile-image">
+          <!-- <i class="fas fa-users"></i> -->
+          <img src="assets/img/jessica-profile.jpg" alt="Jessica Rossi" />
+        </div>
+      </div>
+      <div class="main__content">
+        <h1>About</h1>
+        <div class="h2-wrap">
+          <div class="about description">
+            <p>
+              Welcome to Jessica Rossi Beauty! A trusted name in beauty for over nine years.
+              Conveniently located in the lively Temple Bar area, right in the heart of Dublin
+              city center, we specialize in a comprehensive range of services. Whether you're
+              seeking flawless eyebrow design, captivating eyelash perms, smooth waxing and
+              threading, or indulgent facial and body treatments, our beauty clinic is here
+              to provide you with a personalized and relaxing experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- <div id="map"></div> -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.3720769755423!2d-6.264692552012115!3d53.34458105358653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670fb69b4a6a33%3A0x3df7c17389261d4e!2sJessica%20Rossi%20Beauty!5e0!3m2!1sen!2sus!4v1692337245459!5m2!1sen!2sus"
+          id="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <p style="font-weight: 400; font-size: 25px">
+          Learn more about our services!
+        </p>
+        <button class="main__btn service-btn" onclick="location.href='#services'">
+          Services
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="services" id="services">
+    <h1>Services</h1>
+
+    <div class="services-wrapper">
+      <div class="services-card card-eye">
+        <h2>Eye Treatments</h2>
+        <p>Give them the deserved care.</p>
+        <div class="services-btn">
+          <button onclick="openPriceListDialog('tab-eyes');">
+            View Pricelist
+          </button>
+        </div>
+      </div>
+
+      <div class="services-card card-facial">
+        <h2>Facial Treatments</h2>
+        <p>For a smooth and glowing skin.</p>
+        <div class="services-btn">
+          <button onclick="openPriceListDialog('tab-facial');">
+            View Pricelist
+          </button>
+        </div>
+      </div>
+
+      <div class="services-card card-body">
+        <h2>Massage</h2>
+        <p>Relax, Release, Rebalance.</p>
+        <div class="services-btn">
+          <button onclick="openPriceListDialog('tab-massage');">
+            View Pricelist
+          </button>
+        </div>
+      </div>
+
+      <div class="services-card card-waxing">
+        <h2>Waxing & Threading</h2>
+        <p>Silky legs for days.</p>
+        <div class="services-btn">
+          <button onclick="openPriceListDialog('tab-waxing');">
+            View Pricelist
           </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- About Section -->
-    <div class="main" id="about">
-      <div class="main__container">
-        <div class="main__img--container">
-          <div class="main__img--card" id="card-1" class="profile-image">
-            <!-- <i class="fas fa-users"></i> -->
-            <img src="assets/img/jessica-profile.jpg" alt="Jessica Rossi" />
-          </div>
+  <!-- <DIALOG> -->
+  <dialog id="pricelist-dialog">
+    <!-- content is coming from pricelist-content.html through js script function 'openPriceListDialog' -->
+  </dialog>
+
+  <dialog appointment-policy id="policy-dialog">
+
+    <div class="policy-language-selector">
+      <input type="radio" id="policy-english-btn" name="policy-lang" checked="checked" />
+      <label for="policy-english-btn" class="lang-button" onclick="openPolicyDialog('policy-english-btn')">
+        <div class="policy-english">
+          <h4>English</h4>
+          <img src="assets/img/english-flag.png" class="english-flag" alt="English Flag" />
         </div>
-        <div class="main__content">
-          <h1>About</h1>
-          <div class="h2-wrap">
-            <div class="about description">
-              <p>
-                Welcome to Jessica Rossi Beauty! A trusted name in beauty for over nine years. 
-                Conveniently located in the lively Temple Bar area, right in the heart of Dublin 
-                city center, we specialize in a comprehensive range of services. Whether you're 
-                seeking flawless eyebrow design, captivating eyelash perms, smooth waxing and 
-                threading, or indulgent facial and body treatments, our beauty clinic is here 
-                to provide you with a personalized and relaxing experience.
-              </p>
-            </div>
-          </div>
+      </label>
 
-          <!-- <div id="map"></div> -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.3720769755423!2d-6.264692552012115!3d53.34458105358653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670fb69b4a6a33%3A0x3df7c17389261d4e!2sJessica%20Rossi%20Beauty!5e0!3m2!1sen!2sus!4v1692337245459!5m2!1sen!2sus"
-            id="map"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-
-          <p style="font-weight: 400; font-size: 25px">
-            Learn more about our services!
-          </p>
-          <button class="main__btn"><a href="#services">Services</a></button>
+      <input type="radio" id="policy-brazilian-btn" name="policy-lang" />
+      <label for="policy-brazilian-btn" class="lang-button" onclick="openPolicyDialog('policy-brazilian-btn')">
+        <div class="policy-brazilian">
+          <h4>Portuguese</h4>
+          <img src="assets/img/brazillian-flag.png" class="brazilian-flag" alt="Brazilian Flag" />
         </div>
+      </label>
+    </div>
+    <div id="policy-english-content" class="policy-body policy-content-lang">
+      <h2>Reservation and cancellation policy</h2>
+      <div class="policy-content content-1">
+        <h3>Reservation:</h3>
+        <p>
+          Note, we have a reservation policy to allocate your appointment time
+          frame.<br />
+          <span>We charge 25% in advance</span> to get your treatment
+          appointment allocated to make sure no one can book your time
+          frame.<br />
+          The 25% reservation policy price is within the treatment price that
+          will be purchased.
+        </p>
+
+        <h3>Cancellation:</h3>
+
+        <p>
+          <span>24 hours notice is required to cancel</span> an appointment to
+          qualify for a refund.<br />
+          You can opt to do a one-off payment, but in case you cannot attend,
+          promptly notify us. If cancellation occurs <u>less</u> than 24 hours
+          in advance, 75% of the treatment price will be refunded.<br /><br />
+          <i class="fa fa-info" style="color: rgb(90, 0, 80)"></i>
+          Walk-ins without the need for an appointment are possible, but rare,
+          as we may already have booked someone in the time frame. So, we
+          strongly advise you to book an appointment before so not to lose
+          your commute time and that no one can book your time frame.
+        </p>
       </div>
     </div>
 
-    <!-- Services Section -->
-    <div class="services" id="services">
-      <h1>Services</h1>
-
-      <div class="services-wrapper">
-        <div class="services-card card-eye">
-          <h2>Eye Treatments</h2>
-          <p>Give them the deserved care.</p>
-          <div class="services-btn">
-            <button onclick="openPriceListDialog('tab-eyes');">
-              View Pricelist
-            </button>
-          </div>
-        </div>
-
-        <div class="services-card card-facial">
-          <h2>Facial Treatments</h2>
-          <p>For a smooth and glowing skin.</p>
-          <div class="services-btn">
-            <button onclick="openPriceListDialog('tab-facial');">
-              View Pricelist
-            </button>
-          </div>
-        </div>
-
-        <div class="services-card card-body">
-          <h2>Massage</h2>
-          <p>Relax, Release, Rebalance.</p>
-          <div class="services-btn">
-            <button onclick="openPriceListDialog('tab-massage');">
-              View Pricelist
-            </button>
-          </div>
-        </div>
-
-        <div class="services-card card-waxing">
-          <h2>Waxing & Threading</h2>
-          <p>Silky legs for days.</p>
-          <div class="services-btn">
-            <button onclick="openPriceListDialog('tab-waxing');">
-              View Pricelist
-            </button>
-          </div>
-        </div>
+    <div id="policy-brazilian-content" class="policy-body policy-content-lang">
+      <h2 class="policy-title">Política de reservas e cancelamento</h2>
+      <div class="policy-content content-2">
+        <h3>Reserva:</h3>
+        <p>
+          Observe que temos uma política de reserva para alocar o horário do
+          seu agendamento.<br />
+          <span>Cobramos 25% antecipadamente</span> para que sua consulta de
+          tratamento seja alocada, para garantir que ninguém possa agendar seu
+          horário.<br />
+          O preço da política de reserva de 25% está dentro do preço do
+          tratamento que será adquirido.
+        </p>
+        <h3>Cancelamento:</h3>
+        <p>
+          Para se qualificar para um reembolso,
+          <span>é necessário um aviso prévio de 24 horas para cancelar</span>
+          o agendamento.<br />
+          Você pode optar por fazer o pagamento do preço total do
+          procedimento, but caso não possa comparecer, avise-nos
+          imediatamente. Se o cancelamento ocorrer com <u>menos</u> de 24
+          horas de antecedência, 75% do preço do tratamento será
+          reembolsado.<br /><br />
+          <i class="fa fa-info" style="color: rgb(90, 0, 80)"></i>
+          Visitas sem necessidade de agendamento são possíveis, mas raras,
+          pois podemos já ter um agendamento no momento da sua visita.
+          Portanto, aconselhamos fortemente que você marque um horário com
+          antecedência para não perder tempo de deslocamento e ninguém consiga
+          marcar seu horário.
+        </p>
       </div>
     </div>
 
-    <!-- <DIALOG> -->
-    <dialog id="pricelist-dialog">
-      <!-- content is coming from pricelist-content.html through js script function 'openPriceListDialog' -->
-    </dialog>
+    <div class="dialog-footer-item">
+      <button class="regular-btn modal-close-btn" onclick="document.querySelector('[appointment-policy]').close();">
+        Close
+      </button>
+    </div>
+  </dialog>
 
-    <dialog appointment-policy id="policy-dialog">
-      <div class="policy-body">
-        <div class="policy-content content-1">
-          <h3>English:</h3>
-          <h2>Reservation & Cancellation Policy</h2>
-          <p>
-            Note, we have a reservation policy to allocate your appointment time
-            frame.<br />
-            <span>We charge 25% in advance</span> to get your treatment
-            appointment allocated to make sure no one can book your time
-            frame.<br />
-            The 25% reservation policy price is within the treatment price that
-            will be purchased.
-          </p>
+  <!-- <div class="policy-english">
+      <h3>English</h3>
+      <h3>Reservation & Cancellation Policy</h3>
+      <img src="assets/img/english-flag.png" class="english-flag" alt="English Flag" />
 
-          <h2>Cancellation policy:</h2>
+      <div class="policy-body english-policy"></div>
 
-          <p>
-            <span>24 hours notice is required to cancel</span> an appointment to
-            qualify for a refund.<br />
-            You can opt to do a one-off payment, but in case you cannot attend,
-            promptly notify us. If cancellation occurs <u>less</u> than 24 hours
-            in advance, 75% of the treatment price will be refunded.<br /><br />
-            <!-- <i class="fas fa-users"></i> -->
-            <i class="fa fa-info" style="color: rgb(90, 0, 80)"></i>
-            Walk-ins without the need for an appointment are possible, but rare,
-            as we may already have booked someone in the time frame. So, we
-            strongly advise you to book an appointment before so not to lose
-            your commute time and that no one can book your time frame.
-          </p>
-        </div>
+    </div>
 
-        <div class="policy-content content-2">
-          <h3>Portuguese(BR):</h3>
-          <h2>Política de reservas e cancelamento</h2>
-          <p>
-            Observe que temos uma política de reserva para alocar o horário do
-            seu agendamento.<br />
-            <span>Cobramos 25% antecipadamente</span> para que sua consulta de
-            tratamento seja alocada, para garantir que ninguém possa agendar seu
-            horário.<br />
-            O preço da política de reserva de 25% está dentro do preço do
-            tratamento que será adquirido.
-          </p>
-          <h2>Política de cancelamento:</h2>
-          <p>
-            Para se qualificar para um reembolso,
-            <span>é necessário um aviso prévio de 24 horas para cancelar</span>
-            o agendamento.<br />
-            Você pode optar por fazer o pagamento do preço total do
-            procedimento, mas caso não possa comparecer, avise-nos
-            imediatamente. Se o cancelamento ocorrer com <u>menos</u> de 24
-            horas de antecedência, 75% do preço do tratamento será
-            reembolsado.<br /><br />
-            <i class="fa fa-info" style="color: rgb(90, 0, 80)"></i>
-            Visitas sem necessidade de agendamento são possíveis, mas raras,
-            pois podemos já ter um agendamento no momento da sua visita.
-            Portanto, aconselhamos fortemente que você marque um horário com
-            antecedência para não perder tempo de deslocamento e ninguém consiga
-            marcar seu horário.
-          </p>
-        </div>
+    <div class="policy-brazilian">
+      <h3>Política de reservas e cancelamento</h3>
+      <img src="assets/img/brazillian-flag.png" class="brazilian-flag" alt="Brazilian Flag" />
+    </div>
+
+
+
+
+    <div class="policy-title">
+      <h3>Reservation & Cancellation Policy</h3>
+    </div>
+    <div class="policy-body">
+
+      <h3>English:</h3>
+
+      <h2>Reservation & Cancellation Policy</h2>
+      <div class="policy-content content-1">
+
+        <p>
+          Note, we have a reservation policy to allocate your appointment time
+          frame.<br />
+          <span>We charge 25% in advance</span> to get your treatment
+          appointment allocated to make sure no one can book your time
+          frame.<br />
+          The 25% reservation policy price is within the treatment price that
+          will be purchased.
+        </p>
+
+        <h2>Cancellation policy:</h2>
+
+        <p>
+          <span>24 hours notice is required to cancel</span> an appointment to
+          qualify for a refund.<br />
+          You can opt to do a one-off payment, but in case you cannot attend,
+          promptly notify us. If cancellation occurs <u>less</u> than 24 hours
+          in advance, 75% of the treatment price will be refunded.<br /><br />
+          
+          <i class="fa fa-info" style="color: rgb(90, 0, 80)"></i>
+          Walk-ins without the need for an appointment are possible, but rare,
+          as we may already have booked someone in the time frame. So, we
+          strongly advise you to book an appointment before so not to lose
+          your commute time and that no one can book your time frame.
+        </p>
       </div>
 
-      <div class="dialog-footer-item">
-        <button
-          class="regular-btn modal-close-btn policy-close-btn"
-          onclick="document.querySelector('[appointment-policy]').close();"
-        >
-          Close
-        </button>
-      </div>
-    </dialog>
+      <h3>Portuguese(BR):</h3>
+      <h2>Política de reservas e cancelamento</h2>
+      <div class="policy-content content-2">
 
-    <!-- Testing dynamic   -->
-    <!-- <script>
+        <p>
+          Observe que temos uma política de reserva para alocar o horário do
+          seu agendamento.<br />
+          <span>Cobramos 25% antecipadamente</span> para que sua consulta de
+          tratamento seja alocada, para garantir que ninguém possa agendar seu
+          horário.<br />
+          O preço da política de reserva de 25% está dentro do preço do
+          tratamento que será adquirido.
+        </p>
+        <h2>Política de cancelamento:</h2>
+        <p>
+          Para se qualificar para um reembolso,
+          <span>é necessário um aviso prévio de 24 horas para cancelar</span>
+          o agendamento.<br />
+          Você pode optar por fazer o pagamento do preço total do
+          procedimento, mas caso não possa comparecer, avise-nos
+          imediatamente. Se o cancelamento ocorrer com <u>menos</u> de 24
+          horas de antecedência, 75% do preço do tratamento será
+          reembolsado.<br /><br />
+          <i class="fa fa-info" style="color: rgb(90, 0, 80)"></i>
+          Visitas sem necessidade de agendamento são possíveis, mas raras,
+          pois podemos já ter um agendamento no momento da sua visita.
+          Portanto, aconselhamos fortemente que você marque um horário com
+          antecedência para não perder tempo de deslocamento e ninguém consiga
+          marcar seu horário.
+        </p>
+      </div>
+    </div> -->
+
+  <!-- Testing dynamic   -->
+  <!-- <script>
           function addServiceItem(name, time, price){
 
 
@@ -284,156 +362,125 @@
 
         </script> -->
 
-    <!-- </DIALOG> -->
+  <!-- </DIALOG> -->
 
-    <!-- Features Section -->
-    <div class="main" id="contact">
-      <div class="main__container">
-        <div class="main__img--container">
-          <div class="main__img--card" id="card-2">
-            <!-- <i class="fas fa-comments" style="color: #5f005b00;"></i> -->
-          </div>
-        </div>
+  <!-- Features Section -->
+  <div class="main" id="contact">
+    <div class="main__container">
+      <div class="main__img--container">
+        <div class="main__img--card" id="card-2">
+          <!-- <i class="fas fa-comments" style="color: #5f005b00;"></i> -->
+          <img src="assets/img/contact-us1.jpg" alt="Contact Us" />
 
-        <div class="main__content">
-          <h1>Contact Us</h1>
-          <!-- <h2>Make a booking through whatsapp or instagram!</h2> -->
-
-          <!-- <h2>Get in Touch!</h2> -->
-
-          <div class="contact description">
-            <p>
-              <span>Get in Touch!</span> We're always excited to hear from you! 
-              Have a question about our services, feedback, or just want to say hello? 
-              Don't hesitate to reach out, we're ready to assist you.
-              <br /><br />
-              <span>Connect with us instantly:</span> Click the <span>WhatsApp icon</span> 
-              below to start a chat, or send us a direct message on <span>Instagram</span>.
-              <br />
-            </p>
-            <p>We look forward to connecting with you!</p>
-          </div>
-
-          <div class="description-btns">
-            <button class="main__btn contact-btns" id="whatsapp__btn">
-              <a
-                href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments."
-                ><i
-                  class="fab fa-whatsapp"
-                  style="font-size: 80%; padding-right: 10px"
-                ></i
-                >WhatsApp</a
-              >
-            </button>
-            <button class="main__btn contact-btns">
-              <a href="https://www.instagram.com/jessicarossibeauty/"
-                ><i
-                  class="fab fa-instagram"
-                  style="font-size: 80%; padding-right: 10px"
-                ></i
-                >Instagram</a
-              >
-            </button>
-          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Footer Section -->
-    <div class="footer__container">
-      <div class="footer__links">
-        <div class="footer__link--wrapper">
-          <div class="footer__link--items">
-            <h2>About Us</h2>
-            <a href="#about">Who are we</a>
-            <a href="#about">Location</a>
-            <!-- <a href="/">Testimonials</a> -->
-            <!-- <a href="/">Careers</a>  -->
-            <!-- <a href="/">Terms of Service</a> -->
-          </div>
-          <div class="footer__link--items">
-            <h2>Contact Us</h2>
-            <a
-              href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments."
-              >WhatsApp</a
-            >
-            <a href="https://www.facebook.com/jessica.rossi.design/"
-              >Facebook</a
-            >
-            <a href="https://www.instagram.com/jessicarossibeauty/"
-              >Instagram</a
-            >
-          </div>
-        </div>
-        <div class="footer__link--wrapper">
-          <div class="footer__link--items">
-            <h2>Portfolio</h2>
-            <a href="gallery-content.html">See Gallery</a>
-            <!-- <a href="/">Ambassadors</a>
-            <a href="/">Agency</a> -->
-          </div>
-          <div class="footer__link--items">
-            <h2>Social Media</h2>
-            <a href="https://www.instagram.com/jessicarossibeauty/"
-              >Instagram</a
-            >
-            <a href="https://www.facebook.com/jessica.rossi.design/"
-              >Facebook</a
-            >
-            <!-- <a href="/">Youtube</a>  -->
-            <!-- <a href="/">Twitter</a> -->
-          </div>
-        </div>
-      </div>
-      <section class="social__media">
-        <div class="social__media--wrap">
-          <img
-            src="assets/img/JR Logo v2-b2.png"
-            id="footer__logo"
-            alt="JRB Logo-small"
-          />
-          <div class="footer__logo">
-            <!-- <a href="/" id="footer__logo">JRB</a> -->
-          </div>
-          <p class="website__rights">
-            © Jessica Rossi Beauty 2025. All rights reserved.
+      <div class="main__content">
+        <h1>Contact</h1>
+        <!-- <h2>Make a booking through whatsapp or instagram!</h2> -->
+
+        <!-- <h2>Get in Touch!</h2> -->
+
+        <div class="contact description">
+          <p>
+            <span>Get in Touch!</span> We're always excited to hear from you!
+            Have a question about our services, feedback, or just want to say hello?
+            Don't hesitate to reach out, we're ready to assist you.
+            <br /><br />
+            Connect with us instantly: Click the WhatsApp icon
+            below to start a chat, or send us a direct message on Instagram.
+            <br />
           </p>
-          <div class="social__icons">
-            <a
-              href="https://www.facebook.com/jessica.rossi.design/"
-              class="social__icon--link"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/jessicarossibeauty/"
-              class="social__icon--link"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/j%C3%A9ssica-rossi-8627b712a/?trk=pub-pbmap&originalSubdomain=ie"
-              class="social__icon--link"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </div>
+          <p>We look forward to connecting with you!</p>
         </div>
-      </section>
+
+        <div class="description-btns">
+          <button class="main__btn contact-btns" id="whatsapp__btn">
+            <a
+              href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments."><i
+                class="fab fa-whatsapp" style="font-size: 80%; padding-right: 10px"></i>WhatsApp</a>
+          </button>
+          <button class="main__btn contact-btns">
+            <a href="https://www.instagram.com/jessicarossibeauty/"><i class="fab fa-instagram"
+                style="font-size: 80%; padding-right: 10px"></i>Instagram</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer__container">
+    <div class="footer__links">
+      <div class="footer__link--wrapper">
+        <div class="footer__link--items">
+          <h2>About Us</h2>
+          <a href="#about">Who are we</a>
+          <a href="#about">Location</a>
+          <!-- <a href="/">Testimonials</a> -->
+          <!-- <a href="/">Careers</a>  -->
+          <!-- <a href="/">Terms of Service</a> -->
+        </div>
+        <div class="footer__link--items">
+          <h2>Contact Us</h2>
+          <a
+            href="https://api.whatsapp.com/send?phone=353830110511&text=Hello%2C%20I%20would%20like%20more%20information%20about%20your%20treatments.">WhatsApp</a>
+          <a href="https://www.facebook.com/jessica.rossi.design/">Facebook</a>
+          <a href="https://www.instagram.com/jessicarossibeauty/">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__link--wrapper">
+        <div class="footer__link--items">
+          <h2>Portfolio</h2>
+          <a href="gallery-content.html">See Gallery</a>
+          <!-- <a href="/">Ambassadors</a>
+            <a href="/">Agency</a> -->
+        </div>
+        <div class="footer__link--items">
+          <h2>Social Media</h2>
+          <a href="https://www.instagram.com/jessicarossibeauty/">Instagram</a>
+          <a href="https://www.facebook.com/jessica.rossi.design/">Facebook</a>
+          <!-- <a href="/">Youtube</a>  -->
+          <!-- <a href="/">Twitter</a> -->
+        </div>
+      </div>
+    </div>
+    <section class="social__media">
+      <div class="social__media--wrap">
+        <img src="assets/img/JR Logo v2-b2.png" id="footer__logo" alt="JRB Logo-small" />
+        <div class="footer__logo">
+          <!-- <a href="/" id="footer__logo">JRB</a> -->
+        </div>
+        <p class="website__rights">
+          © Jessica Rossi Beauty 2025. All rights reserved.
+        </p>
+        <div class="social__icons">
+          <a href="https://www.facebook.com/jessica.rossi.design/" class="social__icon--link" target="_blank"><i
+              class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/jessicarossibeauty/" class="social__icon--link"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/j%C3%A9ssica-rossi-8627b712a/?trk=pub-pbmap&originalSubdomain=ie"
+            class="social__icon--link"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="fpickr-dialog">
+    <div class="fpickr-calendar-wrapper">
+      <div class="fpickr-box"></div>
     </div>
 
-    <dialog id="fpickr-dialog">
-      <div class="fpickr-calendar-wrapper">
-      <div class="fpickr-box"></div>
-      </div>
+    <div class="fpickr-btns">
+      <button class="regular-btn fpickr-confirm fpickr-btn" id="confirm-btn">Confirm</button>
+      <button class="regular-btn fpickr-btn" id="cancel-btn">Cancel</button>
+    </div>
+  </dialog>
 
-      <div class="fpickr-btns">
-        <button class="regular-btn fpickr-confirm fpickr-btn" id="confirm-btn">Confirm</button>
-        <button class="regular-btn fpickr-btn" id="cancel-btn">Cancel</button>
-      </div>
-    </dialog>
+  <script src="app.js"></script>
 
-    <script src="app.js"></script>
+  <!-- flatpickr - date and time picker-->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
 
-    <!-- flatpickr - date and time picker-->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  </body>
 </html>
