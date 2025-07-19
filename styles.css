@@ -283,6 +283,8 @@ body {
 
 .description {
   text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
 }
 
 .about p {
@@ -643,6 +645,9 @@ body {
 /*selected tab highlight color*/
 .mytabs input[type="radio"]:checked+label {
   background: #fff;
+  box-shadow: 3px 5px 5px rgba(26, 0, 0, 0.2);
+  border-color: #5a0050;
+  font-weight: 700;
 }
 
 .mytabs label {
@@ -650,10 +655,11 @@ body {
   flex-basis: 120px;
   padding: 15px;
   background: #ffe3e6;
-  font-weight: bold;
+  font-weight: 300;
   font-size: 20px;
   color: rgb(49 0 43);
   border-radius: 8px;
+  border: 1px solid #ffe3e6;
 }
 
 .mytabs .tab_body {
@@ -707,6 +713,7 @@ body {
   margin-top: 5px;
   font-weight: 300;
   font-size: 16px;
+  hyphens: auto;
 }
 
 .item-with-description {
@@ -738,6 +745,7 @@ body {
   padding: 10px 20px;
   margin-left: 5px;
   margin-right: 5px;
+  font-weight: 300;
 }
 
 .pricelist-footer {
@@ -1217,8 +1225,9 @@ margin-top: 5px;
 
 @media screen and (max-width: 768px) {
 
-  #whatsapp__btn {
-    margin-top: 5px;
+  .contact-btns {
+    margin-top: 20px;
+    margin-bottom: 0px;
   }
 
   .services-wrapper {
