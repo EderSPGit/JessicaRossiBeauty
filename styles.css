@@ -85,7 +85,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: #f5b2bb;
+  background-color: #e0aee1;
 }
 
 #navbar__logo {
@@ -400,8 +400,9 @@ body {
 .services {
   background: var(--pink-theme);
   /* fallback for old browsers */
-  background: var(--pink-gradient-platform1);
+  /* background: var(--pink-gradient-platform1); */
   background: var(--pink-gradient-platform2);
+  background: #fedbff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -442,7 +443,7 @@ body {
   transition: 0.3s ease-in;
   background-image: url("assets/img/services-eye.jpg");
   background-size: cover;
-  box-shadow: 5px 10px 20px rgba(56, 0, 0, 0.5);
+  box-shadow: 5px 5px 20px rgb(49 0 42 / 50%);
 }
 
 .services-card:nth-child(2) {
@@ -611,8 +612,8 @@ body {
   width: 80%;
   background: var(--pink-theme);
   /* fallback for old browsers */
-  background: var(--pink-gradient-platform1);
-  background: var(--pink-gradient-platform2);
+  /* background: var(--pink-gradient-platform1); */
+  background: #fedbff;
 }
 
 #pricelist-dialog::backdrop {
@@ -648,18 +649,19 @@ body {
   box-shadow: 3px 5px 5px rgba(26, 0, 0, 0.2);
   border-color: #5a0050;
   font-weight: 700;
+  text-decoration: underline;
 }
 
 .mytabs label {
   flex-grow: 1;
   flex-basis: 120px;
   padding: 15px;
-  background: #ffe3e6;
+  background: #fff9ff;
   font-weight: 300;
   font-size: 20px;
   color: rgb(49 0 43);
   border-radius: 8px;
-  border: 1px solid #ffe3e6;
+  border: 1px solid #5a0050;
 }
 
 .mytabs .tab_body {
@@ -700,8 +702,8 @@ body {
   border-width: 1px;
   border-radius: 10px;
   margin: 2px 0px;
-  border-color: #f2abb4;
-  background-color: rgb(255, 247, 247);
+  border-color: #5a0050;
+  background-color: rgb(254 238 255);
   text-align: center;
 }
 
@@ -717,12 +719,12 @@ body {
 }
 
 .item-with-description {
-  border-bottom: 1px solid #e7adb1;
+  border-bottom: 1px solid #5a0050;
   padding-bottom: 0.35rem;
 }
 
 .select-btn {
-  background-color: #ffffff00;
+  background-color: #ffffff;
   border: 2px solid var(--dark-purple);
   color: var(--dark-purple);
 
@@ -808,7 +810,8 @@ body {
   border-radius: 1rem;
   border-width: 1px;
   border-color: rgb(48, 0, 42);
-  background: var(--pink-gradient-platform2);
+  /* background: var(--pink-gradient-platform2); */
+  background: #fedbff;
   overflow: hidden;
   z-index: 1000;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -864,7 +867,7 @@ body {
   border-width: 0px;
   width: 80%;
   background: #ececec;
-  background: var(--pink-gradient-platform2);
+  background: #fedbff;
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -967,7 +970,7 @@ margin-top: 5px;
 .policy-body h2 {
   /* color: rgb(59 0 8); */
   color: rgb(0, 0, 0);
-  text-align: center;
+  text-align: left;
   font-size: 22px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -979,7 +982,7 @@ margin-top: 5px;
   font-size: 20px;
   /* border-bottom: 1px solid #000000; */
   color: rgb(0, 0, 0);
-  margin-left: 3px;
+  /* margin-left: 0px; */
   text-decoration: underline;
   width: fit-content;
 }
@@ -992,7 +995,7 @@ margin-top: 5px;
   display: block;
   text-align: justify;
   padding: 10px;
-  border: 1px solid #edc4c4;
+  border: 1px solid #edc4ea;
   border-radius: 10px;
 }
 
@@ -1008,7 +1011,7 @@ margin-top: 5px;
 }
 
 .policy-content span {
-  color: rgb(111 0 0);
+  color: rgb(111 0 102);
   text-decoration: underline;
 }
 
@@ -1095,8 +1098,31 @@ margin-top: 5px;
   }
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-height: 568px) {
+  .navbar__menu.active {
+    background: var(--dark-pink);
+    border-bottom: 2px solid #ffffff;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 470px;
+    font-size: 25px;
+  }
+} */
 
+@media screen and (max-width: 1000px) {
+  /*__________Mobile Hamburger Menu__________*/
+  .navbar__menu.active {
+    background: var(--dark-pink);
+    border-bottom: 2px solid #ffffff;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 470px;
+    font-size: 25px;
+  }
   .button {
     display: flex;
     justify-content: center;
@@ -1129,18 +1155,6 @@ margin-top: 5px;
 
   #contact-navbar {
     display: block;
-  }
-
-  /*__________Mobile Hamburger Menu__________*/
-  .navbar__menu.active {
-    background: var(--dark-pink);
-    border-bottom: 2px solid #ffffff;
-    top: 100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 99;
-    height: 55vh;
-    font-size: 25px;
   }
 
   .button.appointment__btn {
