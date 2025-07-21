@@ -286,7 +286,7 @@ body {
 /* For very small screens, allow wrapping (your media query) */
 @media screen and (max-width: 425px) {
   .gallery-nav-buttons {
-    top: 105px; /* Keep this if you want it closer to the top on small screens */
+    top: 90px; 
     /* Ensure no wrapping on small screens as well */
     white-space: nowrap;
     flex-wrap: nowrap;
@@ -296,16 +296,6 @@ body {
   }
 
   .gallery-logo-container {
-   top: 30px; 
-  }
-}
-@media screen and (max-width: 395px) {
-  .gallery-nav-buttons {
-    top: 120px;
-  }
-
-  
-  .gallery-logo-container {
-   top: 40px; 
+   top: 20px; 
   }
 }
