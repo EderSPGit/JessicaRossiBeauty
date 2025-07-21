@@ -123,7 +123,7 @@ body {
 /* --- Floating Gallery Navigation Buttons --- */
 .gallery-nav-buttons {
   position: fixed;
-  top: 90px; /* Adjust this value as needed to clear your logo */
+  top: 80px; /* Adjust this value as needed to clear your logo */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -286,7 +286,7 @@ body {
 /* For very small screens, allow wrapping (your media query) */
 @media screen and (max-width: 425px) {
   .gallery-nav-buttons {
-    top: 115px; /* Keep this if you want it closer to the top on small screens */
+    top: 105px; /* Keep this if you want it closer to the top on small screens */
     /* Ensure no wrapping on small screens as well */
     white-space: nowrap;
     flex-wrap: nowrap;
@@ -301,11 +301,11 @@ body {
 }
 @media screen and (max-width: 395px) {
   .gallery-nav-buttons {
-    top: 130px;
+    top: 120px;
   }
 
   
   .gallery-logo-container {
-   top: 50px; 
+   top: 40px; 
   }
 }
