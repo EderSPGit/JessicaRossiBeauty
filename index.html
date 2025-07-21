@@ -181,18 +181,18 @@
 
     <div class="policy-language-selector">
       <input type="radio" id="policy-english-btn" name="policy-lang" checked="checked" />
-      <label for="policy-english-btn" class="lang-button" onclick="openPolicyDialog('policy-english-btn')">
+      <label for="policy-english-btn" class="lang-button uk-policy">
         <div class="policy-english">
           <h4>English</h4>
-          <img src="assets/img/english-flag.png" class="english-flag" alt="English Flag" />
+          <!-- <img src="assets/img/english-flag.png" class="english-flag" alt="English Flag" /> -->
         </div>
       </label>
 
       <input type="radio" id="policy-brazilian-btn" name="policy-lang" />
-      <label for="policy-brazilian-btn" class="lang-button" onclick="openPolicyDialog('policy-brazilian-btn')">
+      <label for="policy-brazilian-btn" class="lang-button br-policy">
         <div class="policy-brazilian">
           <h4>Portuguese</h4>
-          <img src="assets/img/brazillian-flag.png" class="brazilian-flag" alt="Brazilian Flag" />
+          <!-- <img src="assets/img/brazillian-flag.png" class="brazilian-flag" alt="Brazilian Flag" /> -->
         </div>
       </label>
     </div>
@@ -261,7 +261,7 @@
     </div>
 
     <div class="dialog-footer-item">
-      <button class="regular-btn modal-close-btn" onclick="document.querySelector('[appointment-policy]').close();">
+      <button class="regular-btn modal-close-btn" onclick="document.getElementById('policy-dialog').close()">
         Close
       </button>
     </div>

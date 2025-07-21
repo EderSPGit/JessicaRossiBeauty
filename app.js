@@ -123,70 +123,75 @@ function showPolicyContent() {
     brazilianContent.classList.remove('active');
   }
 }
-function updateCurrentTabId() {
-  let currentTab = null;
-  // Add event listeners to update currentTab when a tab is selected
-  const radioButtons = document.querySelectorAll('input[name="mytabs"]');
-  radioButtons.forEach((radioButton) => {
-    radioButton.addEventListener("change", (event) => {
-      currentTab = getCurrentPriceListTabId();
-      console.log("Current Tab updated to: " + currentTab);
-    });
-  });
-}
 
-function getCurrentLanguage() {
-  let currentLanguage = document.querySelector('input[name="policy-lang"]:checked');
-  if (currentLanguage) {
-    return currentLanguage.id;
-  } else {
-    return null;
-  }
-}
-
-function openPolicyDialog(languageIdToShow) {
+function openPolicyDialog() {
 
   const policyDialog = document.getElementById('policy-dialog');
   if (!policyDialog) {
     console.error("Policy dialog with ID 'policy-dialog' not found.");
     return;
   }
-
-  const targetRadioButton = document.getElementById(languageIdToShow);
-  if (!targetRadioButton) {
-    console.error(`Radio button with ID ${languageIdToShow} not found.`);
-    return;
-  }
-  targetRadioButton.checked = true;
-
   showPolicyContent();
-  policyDialog.showModal(targetRadioButton.click());
-  updateCurrentLanguageId();
+  policyDialog.showModal();
 }
 
-function updateCurrentLanguageId() {
-  let currentLanguage = null;
-  // Add event listeners to update currentLanguage when a radio btn is selected
-  const radioButtons = document.querySelectorAll('input[name="policy-lang"]');
-  radioButtons.forEach((radioButton) => {
-    radioButton.addEventListener("change", (event) => {
-      currentLanguage = getCurrentLanguage();
-      console.log("Current language updated to: " + currentLanguage);
-    });
-  });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const policyDialog = document.getElementById('policy-dialog');
 
-function getCurrentLanguage() {
-  let currentLanguage = document.querySelector(
-    'input[name="policy-lang"]:checked'
-  );
-  //if currentLanguage exists...
-  if (currentLanguage) {
-    return currentLanguage.id;
-  } else {
-    return null;
-  }
-}
+    if (policyDialog) {
+        // Assign global variables to the elements found in DOMContentLoaded
+        englishRadio = document.getElementById('policy-english-btn');
+        brazilianRadio = document.getElementById('policy-brazilian-btn');
+        englishContent = document.getElementById('policy-english-content');
+        brazilianContent = document.getElementById('policy-brazilian-content');
+
+        if (!englishRadio || !brazilianRadio || !englishContent || !brazilianContent) {
+            console.error("One or more policy content elements not found during DOMContentLoaded initialization.");
+        }
+
+        // Add event listeners to the radio buttons ONLY ONCE on page load
+        if (englishRadio) englishRadio.addEventListener('change', showPolicyContent);
+        if (brazilianRadio) brazilianRadio.addEventListener('change', showPolicyContent);
+
+        // Listener for when the dialog opens (after showModal() is called)
+        policyDialog.addEventListener('show', () => {
+            console.log("Policy dialog is opening.");
+            // Ensure correct policy is shown when dialog opens (this handles initial display if needed)
+            showPolicyContent();
+        });
+
+        // Listener for when the dialog closes
+        policyDialog.addEventListener('close', () => {
+            console.log("Policy dialog is closing.");
+            // Reset to English and ensure content is updated for next open (optional but good practice)
+            if (englishRadio) {
+                englishRadio.checked = true;
+                showPolicyContent(); // Update content display after reset
+            }
+        });
+
+        // Initial setup on page load: ensures English is shown by default if dialog is open initially
+        if (englishRadio && !englishRadio.checked) {
+            englishRadio.checked = true;
+        }
+        showPolicyContent(); // Call initially to set the correct display state for the policy dialog
+
+
+        // e.stopPropagation() for robustness on language buttons
+        // This prevents clicks on the language selection area from closing the dialog unexpectedly
+        const langButtons = policyDialog.querySelectorAll('.lang-button');
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                console.log("Language button clicked, event propagation stopped.");
+            });
+        });
+
+    } else {
+        console.error("Policy dialog with ID 'policy-dialog' not found during DOMContentLoaded.");
+    }
+});
+
 // ---------------------- Policy Functions END-------------------------------------------
 //---------------------- Pricelist Functions --------------------------------------------
 function openPriceListDialog(tabId) {
@@ -198,8 +203,9 @@ function openPriceListDialog(tabId) {
 
       const tabElement = document.getElementById(tabId);
       if (tabElement) {
-        priceListDialog.showModal(tabElement.click());
-        updateCurrentTabId();
+        tabElement.click(); 
+        updateCurrentTabId(); 
+        priceListDialog.showModal();
       } else {
         console.error(`Element with ID ${tabId} not found.`);
       }
