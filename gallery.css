@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   position: relative;
   height: 100%;
@@ -9,13 +9,13 @@ body {
     to right,
     #fbcfd4,
     #f2abb4
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); 
   --pink-gradient-platform2: linear-gradient(
     to right,
     #fbcfd4,
     #f2abb4
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: var(--pink-theme); /* fallback for old browsers */
+  );
+  background: var(--pink-theme); 
   background: var(--pink-gradient-platform1);
   background: var(--pink-gradient-platform2);
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -62,7 +62,6 @@ swiper-slide img {
 
   inset-inline-start: 0px;
   inset-inline-end: 0px;
-  /* height: fit-content; */
 }
 
 .top-right-button button {
@@ -76,4 +75,237 @@ swiper-slide img {
   top: 1vh;
   right: 2vw;
   z-index: 2;
+} */
+
+
+/* SWIPER 2 TEST*/
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #fedbff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Gallery Logo --- */
+.gallery-logo-container {
+  position: fixed; /* Make it float */
+  top: 10px;       /* Adjust as needed for spacing from top edge */
+  left: 50%;       /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for true centering */
+  z-index: 1001;   /* Higher z-index than buttons to be on top */
+  /* Keeping background for consistency with buttons, adjust if needed */
+  background-color: rgba(255, 255, 255, 0.7); 
+  width: 100%;
+  padding: 8px 15px; /* Padding around the logo */
+  /* border-radius: 25px; */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Your previous button shadow */
+}
+
+.gallery-logo {
+  max-height: 50px; /* Adjust logo size as needed */
+  width: auto;      /* Maintain aspect ratio */
+  display: block;   /* Remove extra space below image */
+  margin: auto;
+}
+
+
+/* --- Floating Gallery Navigation Buttons --- */
+.gallery-nav-buttons {
+  position: fixed;
+  top: 90px; /* Adjust this value as needed to clear your logo */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 5px;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  padding: 10px 10px;
+  border-radius: 30px;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
+
+  /* *** KEY PROPERTIES TO ENSURE SINGLE ROW *** */
+  white-space: nowrap; /* Prevents items from wrapping to the next line */
+  flex-wrap: nowrap;   /* Explicitly ensures flex items do not wrap */
+  overflow-x: auto;    /* Allows horizontal scrolling if content exceeds container width */
+  max-width: 95%;      /* Limits the container's width, allowing it to take almost full screen width */
+  justify-content: center; /* Centers buttons if there's extra space */
+
+  /* Optional: Hide scrollbar for a cleaner look */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+/* Hide scrollbar for Webkit browsers */
+.gallery-nav-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-nav-btn {
+  background-color: rgba(106, 53, 131, 0.671); /* Your color */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 15px;
+  border-radius: 10px; /* Your border-radius */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300; /* Your font-weight */
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Ensures button text doesn't wrap */
+}
+
+.gallery-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.gallery-nav-btn.active {
+  background-color: rgba(87, 0, 77, 0.884); /* Your active background color */
+  border: 2px solid rgb(255, 218, 249); /* Your active border */
+  font-weight: bold; /* Keeping bold for active, your previous had 300 twice */
+  box-shadow: 0 0 10px rgba(90, 0, 80, 0.5);
+  /* font-weight: 300; */ /* Removed duplicate */
+  text-decoration: underline; /* Your text-decoration */
+}
+
+/* --- Swiper Specific Styles --- */
+.swiper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main Swiper specific styles */
+.mySwiper2 {
+  height: 80%;
+  margin-bottom: 10px;
+  /* ADJUSTED: Need more padding-top for both logo and buttons */
+  /* Estimate: logo + buttons + gaps = ~50px + ~40px + ~10px + ~10px (padding) = 110px. Add a buffer. */
+  padding-top: 120px; /* **TWEAK THIS VALUE** based on total height of your fixed header area */
+  box-sizing: border-box;
+}
+
+/* Thumbs Swiper specific styles */
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: #d7a2d7;
+}
+
+/* Slide styles (applies to both main and thumbs unless overridden) */
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* REMOVED background: #444; - now using your preferred slide background */
+  background: #fedbff; /* Your body background color, now applied to slides */
+  background-size: cover; /* This seems to be for the slide itself, not the image */
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #333; */ /* Removed previous placeholder background */
+}
+
+.swiper-slide .image-frame {
+  background-color: white; /* The white background */
+  width: 100%;
+  /* max-width: 490px; */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px; /* Maintained your border-radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Maintained your box-shadow */
+}
+
+/* Images within Swiper Slides */
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  max-width: 450px; /* Maintained your max-width */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Thumbs Swiper Slide specific */
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+/* Navigation buttons for main Swiper */
+.mySwiper2 .swiper-button-next,
+.mySwiper2 .swiper-button-prev {
+  color: rgb(90, 0, 80);
+}
+
+/* Pagination for main Swiper */
+.mySwiper2 .swiper-pagination {
+  bottom: 0px;
+}
+
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 10px));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 10px));
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(90, 0, 80);
+}
+
+.top-right-button button {
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(107 0 119 / 90%);
+  cursor: pointer;
+  position: absolute;
+  top: 1vh;
+  right: 2vw;
+  z-index: 1002;
+}
+
+/* For very small screens, allow wrapping (your media query) */
+@media screen and (max-width: 425px) {
+  .gallery-nav-buttons {
+    top: 115px; /* Keep this if you want it closer to the top on small screens */
+    /* Ensure no wrapping on small screens as well */
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    /* Other properties you want to keep for small screens */
+    max-width: 100%; /* Can take full width on small screens */
+    padding: 10px;
+  }
+
+  .gallery-logo-container {
+   top: 30px; 
+  }
+}
+@media screen and (max-width: 395px) {
+  .gallery-nav-buttons {
+    top: 130px;
+  }
+
+  
+  .gallery-logo-container {
+   top: 50px; 
+  }
 }

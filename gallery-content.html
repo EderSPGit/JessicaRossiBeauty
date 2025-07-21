@@ -1,78 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>JRB Gallery</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
-    <script src="https://unpkg.com/swiper@11.6.0/dist/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="gallery.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
-  </head>
 
-  <body>
-    <!-- Add this button to the top right corner -->
-    <div class="top-right-button">
-      <!-- <button onclick="window.location.href='index.html'">x</button> -->
-      <!-- <button onclick="hideGalleryDialog();">x</button> -->
-      <button onclick="window.location.href='index.html'">&times;</button>
+<head>
+  <meta charset="utf-8" />
+  <title>JRB Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+
+<body>
+
+  <!-- Add this button to the top right corner -->
+  <div class="top-right-button">
+    <!-- <button onclick="window.location.href='index.html'">x</button> -->
+    <!-- <button onclick="hideGalleryDialog();">x</button> -->
+    <button onclick="window.location.href='index.html'">&times;</button>
+  </div>
+
+  <div class="gallery-logo-container">
+    <img src="assets/img/JR Logo v2-w2.png" alt="JRB Logo" class="gallery-logo">
+  </div>
+
+  <!-- Floating Gallery Navigation Buttons -->
+  <div class="gallery-nav-buttons">
+    <button data-section="eyebrow" class="gallery-nav-btn active">Eyebrow Design</button>
+    <button data-section="eyelash" class="gallery-nav-btn">Eyelash</button>
+    <button data-section="massage" class="gallery-nav-btn">Massage</button>
+    <!-- Add more buttons here if you add more sections -->
+  </div>
+
+  <!-- Main Swiper Container -->
+  <div class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+      <!-- Eyebrow Section (5 images) -->
+      <div class="swiper-slide" data-section="eyebrow">
+        <div class="image-frame"><img src="assets/img/gallery/eyebrow1.jpg" alt="Eyebrow 1" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyebrow">
+        <div class="image-frame"><img src="assets/img/gallery/eyebrow2.jpg" alt="Eyebrow 2" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyebrow">
+        <div class="image-frame"><img src="assets/img/gallery/eyebrow3.jpg" alt="Eyebrow 3" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyebrow">
+        <div class="image-frame"><img src="assets/img/gallery/eyebrow5.jpg" alt="Eyebrow 4" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyebrow">
+        <div class="image-frame"><img src="assets/img/gallery/eyebrow6.jpg" alt="Eyebrow 5" /></div>
+      </div>
+
+      <!-- Eyelash Section (5 images) - Using placeholder images for demo -->
+      <div class="swiper-slide" data-section="eyelash">
+        <div class="image-frame"><img src="assets/img/gallery/eyelash1.jpg" alt="Eyelash 1" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyelash">
+        <div class="image-frame"><img src="assets/img/gallery/eyelash2.jpg" alt="Eyelash 2" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyelash">
+        <div class="image-frame"><img src="assets/img/gallery/eyelash3.jpg" alt="Eyelash 3" /></div>
+      </div>
+      <div class="swiper-slide" data-section="eyelash">
+        <div class="image-frame"><img src="assets/img/gallery/eyelash4.jpg" alt="Eyelash 4" /></div>
+      </div>
+
+      <!-- Massage Section (5 images) - Using placeholder images for demo -->
+      <div class="swiper-slide" data-section="massage">
+        <div class="image-frame"><img src="assets/img/gallery/modelling-massage1.jpg" alt="Massage 1" /></div>
+      </div>
+      <div class="swiper-slide" data-section="massage">
+        <div class="image-frame"><img src="assets/img/gallery/modelling-massage2.jpg" alt="Massage 2" /></div>
+      </div>
+      <div class="swiper-slide" data-section="massage">
+        <div class="image-frame"><img src="assets/img/gallery/modelling-massage3.jpg" alt="Massage 3" /></div>
+      </div>
+      <div class="swiper-slide" data-section="massage">
+        <div class="image-frame"><img src="assets/img/gallery/modelling-massage4.jpg" alt="Massage 4" /></div>
+      </div>
+      <div class="swiper-slide" data-section="massage">
+        <div class="image-frame"><img src="assets/img/gallery/modelling-massage5.jpg" alt="Massage 5" /></div>
+      </div>
     </div>
+    <!-- Add Navigation buttons inside the main Swiper container -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Add Pagination inside the main Swiper container -->
+    <div class="swiper-pagination"></div>
+  </div>
 
-    <swiper-container
-      class="mySwiper"
-      pagination="true"
-      pagination-clickable="true"
-      direction="vertical"
-      space-between="30"
-      mousewheel="true"
-    >
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/eyebrow1.jpg"
-          alt="Eyebrow Design Slide 1"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/eyebrow2.jpg"
-          alt="Eyebrow Design Slide 2"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/eyebrow3.jpg"
-          alt="Eyebrow Design Slide 3"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/eyebrow5.jpg"
-          alt="Eyebrow Design Slide 5"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/eyebrow6.jpg"
-          alt="Eyebrow Design Slide 6"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/modelling-massage1.jpg"
-          alt="Modellin Massage Slide 1"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/modelling-massage2.jpg"
-          alt="Modellin Massage Slide 2"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="assets/img/gallery/modelling-massage3.jpg"
-          alt="Modellin Massage Slide 3"
-      /></swiper-slide>
+  <!-- Thumbs Swiper Container -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- IMPORTANT: These image paths MUST match your main slides -->
+      <div class="swiper-slide"><img src="assets/img/gallery/eyebrow1.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyebrow2.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyebrow3.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyebrow5.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyebrow6.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyelash1.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyelash2.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyelash3.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/eyelash4.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/modelling-massage1.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/modelling-massage2.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/modelling-massage3.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/modelling-massage4.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/img/gallery/modelling-massage5.jpg" /></div>
+    </div>
+  </div>
 
-      <div class="swiper-pagination"></div>
-    </swiper-container>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Swiper JS-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-  </body>
+  <!-- Initialize Swiper and Section Navigation Logic -->
+  <script>
+    // Define the start index for each section in the main slider (mySwiper2)
+    const sectionStartIndices = {
+      eyebrow: 0, // Eyebrow starts at slide index 0
+      eyelash: 5, // Eyelash starts after 5 eyebrow images (index 5)
+      massage: 10, // Massage starts after 5 eyebrow + 5 eyelash images (index 10)
+      // Add more sections here: 'sectionName': startIndex
+    };
+
+    // Initialize the Thumbs Swiper FIRST
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    // Initialize the Main Swiper SECOND
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".mySwiper2 .swiper-button-next",
+        prevEl: ".mySwiper2 .swiper-button-prev",
+      },
+      pagination: {
+        el: ".mySwiper2 .swiper-pagination",
+        clickable: true,
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+      // autoplay: { 
+      //   delay: 5000,
+      //   disableOnInteraction: false,
+      // },
+    });
+
+    // --- Section Navigation Logic ---
+    const galleryNavButtons = document.querySelectorAll('.gallery-nav-btn');
+    const swiperSlides = document.querySelectorAll('.mySwiper2 .swiper-slide');
+
+    // Function to update the active button highlight
+    function updateActiveNavButton() {
+      const currentRealIndex = swiper2.realIndex; // Use realIndex for loop mode
+
+      let activeSection = 'eyebrow'; // Default active section
+
+      // Determine which section the current slide belongs to
+      if (currentRealIndex >= sectionStartIndices.massage) {
+        activeSection = 'massage';
+      } else if (currentRealIndex >= sectionStartIndices.eyelash) {
+        activeSection = 'eyelash';
+      } else {
+        activeSection = 'eyebrow';
+      }
+
+      // Remove 'active' class from all buttons
+      galleryNavButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      // Add 'active' class to the corresponding button
+      const activeButton = document.querySelector(`.gallery-nav-btn[data-section="${activeSection}"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+    }
+
+    // Add click listeners to the floating navigation buttons
+    galleryNavButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const section = button.dataset.section;
+        const targetIndex = sectionStartIndices[section];
+        if (targetIndex !== undefined) {
+          swiper2.slideToLoop(targetIndex); // Use slideToLoop for loop mode
+        }
+      });
+    });
+
+    // Update active button when Swiper changes slide
+    swiper2.on('slideChangeTransitionEnd', updateActiveNavButton);
+
+    // Initial call to set the active button when the page loads
+    // and the Swiper is initialized (it starts at slide 0, so 'eyebrow' should be active)
+    updateActiveNavButton();
+
+  </script>
+
+</body>
+
 </html>
