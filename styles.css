@@ -1346,7 +1346,6 @@ margin-top: 5px;
   .item_name {
     grid-column: span 3;
     text-align: center;
-    border-bottom: 1px solid #e7adb1;
     padding-bottom: 0.2rem;
   }
 
