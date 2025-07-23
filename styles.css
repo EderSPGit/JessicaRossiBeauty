@@ -153,14 +153,11 @@ body {
 
 .hero {
   background-image: url("assets/img/massage-table-R70-G0B70A50.jpg");
-  /* 👈 Replace with your actual image path */
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  /* Optional: use 'fixed' for parallax effect */
-  /* padding: 70px 0; */
-  min-height: 70vw;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,7 +370,7 @@ body {
   color: #fff;
   height: 500px;
   width: 500px;
-  border-radius: 17px;
+  border-radius: 19px;
   display: flex;
   flex-direction: column;
   justify-content: center;
