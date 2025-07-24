@@ -661,6 +661,12 @@ body {
   border: 1px solid #5a0050;
 }
 
+.mytabs label:hover {
+  /* border: 1px solid #008495; */
+  cursor: pointer;
+  background: #f1ebf1;
+}
+
 .mytabs .tab_body {
   width: 100%;
   padding: 20px;
