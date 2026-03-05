@@ -282,7 +282,7 @@ function openCalendar() {
 
     flatpickr(fpInput, {
       enableTime: true,
-      dateFormat: "Y-m-d H:i",
+      dateFormat: "H:i d/m/Y",
       minDate: "today",
       appendTo: calendarBox,
       disableMobile: true,
