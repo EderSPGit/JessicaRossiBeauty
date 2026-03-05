@@ -302,8 +302,7 @@ document.getElementById("confirm-btn").addEventListener("click", () => {
 
   const phone = "353830110511";
   const services = selectedTreatments.map(item => `✔️ ${item}`).join("\n");
-  const formattedDate = formatDate(selectedDate);
-  const message = `Hi Jessica! I'd like to book the following services:\n\n${services}\n\nPreferred Date & Time:\n${formattedDate}`;
+  const message = `Hi Jessica! I'd like to book the following services:\n\n${services}\n\nPreferred Date & Time:\n${selectedDate}`;
   const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
 
   window.open(url, "_blank");
@@ -317,18 +316,8 @@ document.getElementById("cancel-btn").addEventListener("click", () => {
   const dialog = document.getElementById("fpickr-dialog");
   dialog.close();
 });
-
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const year = date.getFullYear();
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-
-  return `${day}/${month}/${year} at ${hours}:${minutes}`;
-}
 //---------------------- FLATPICKR LOGIC END ----------------------------------------------------
+
 //---------------------- DIALOG LOGIC ----------------------------------------------------
 // Select all dialogs and add event listeners
 const dialogs = document.querySelectorAll("dialog");
