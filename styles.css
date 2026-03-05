@@ -861,6 +861,29 @@ body {
   text-align: center;
 }
 
+.flatpickr-time .numInputWrapper span {
+    opacity: 1 !important;
+    width: 35px;
+  padding: 0 4px 0 12px;
+}
+
+  /* Adjust the width of the flatpickr input field */
+.flatpickr-input {
+    width: 80% !important;
+    display: block;      /* Ensures it respects the width setting */
+    margin: 0 auto;     /* Centers it horizontally within the modal */
+    padding: 30px;      /* Optional: makes it taller and easier to tap */
+    text-align: center; /* Optional: centers the date text inside the box */
+}
+
+/*arrow BG*/
+.numInputWrapper span {
+    background-color: #FEDBFF;
+}
+.flatpickr-time .numInputWrapper span:hover {
+    background: #e2a5e2 !important; 
+}
+
 /* -------------------------------- FLATPICKR END------------------------------------------------ */
 /*--------------------------------- POLICY DIALOG SECTION ---------------------------------------*/
 #policy-dialog {
