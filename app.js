@@ -282,8 +282,20 @@ function openCalendar() {
 
     flatpickr(fpInput, {
       enableTime: true,
-      dateFormat: "H:i d/m/Y",
+      dateFormat: "d/m/Y at H:i",
       minDate: "today",
+
+      // 1. Lock Sundays and Mondays
+    disable: [
+    function(date) {
+      return (date.getDay() === 0 || date.getDay() === 1);
+    }
+  ],
+
+    // 2. Set the time boundaries
+    minTime: "09:00",
+    maxTime: "18:30",
+
       appendTo: calendarBox,
       disableMobile: true,
       onClose: (selectedDates, dateStr) => {
