@@ -90,8 +90,8 @@ body {
 
 #navbar__logo {
   display: block;
-  margin-top: 33px;
-  height: 80px;
+  margin-top: 37px;
+  height: 70px;
 }
 
 .navbar__menu {
@@ -1450,7 +1450,6 @@ margin-top: 5px;
 
   #navbar__logo {
     height: 15vw;
-    margin-left: 1vw;
     margin-top: 45px;
   }
 
