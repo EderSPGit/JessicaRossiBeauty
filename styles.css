@@ -250,6 +250,7 @@ body {
 .main__content {
   color: #fff;
   width: 100%;
+  min-width: 0;
   margin-left: 10px;
 }
 
@@ -345,17 +346,21 @@ body {
   text-decoration-line: none;
 }
 
-#whatsapp__btn {
+.btn-whatsapp {
   margin-right: 10px;
   background: #3ae85a;
   background: -webkit-linear-gradient(to bottom, #41ee61, #11ba33);
   background: linear-gradient(to bottom, #41ee61, #11ba33);
 }
 
-#whatsapp__btn:hover {
+.btn-whatsapp:hover {
   background: #008a1c;
   background: -webkit-linear-gradient(to bottom, #008a1c, #41ee61);
   background: linear-gradient(to bottom, #008a1c, #41ee61);
+}
+
+.giftcard-btn {
+  white-space: normal;
 }
 
 .main__img--container {
@@ -514,6 +519,7 @@ body {
 .giftcard__img {
   width: 100%;
   max-width: 420px;
+  min-width: 0;
   filter: drop-shadow(0px 15px 20px rgba(61, 0, 31, 0.35));
 }
 
@@ -1154,6 +1160,11 @@ margin-top: 5px;
     width: 425px;
   }
 
+  .giftcard__img {
+    width: 425px;
+    max-width: 100%;
+  }
+
   .main__content {
     text-align: center;
     margin-left: 0px;
@@ -1488,6 +1499,10 @@ margin-top: 5px;
   }
 
   .main__img--card {
+    width: 75vw;
+  }
+
+  .giftcard__img {
     width: 75vw;
   }
 
